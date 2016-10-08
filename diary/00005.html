@@ -38,102 +38,32 @@
       <p>一瞬一問目からやばいの来たと思ったけど、あれ～入出力例みると32かけてあるだけじゃんと思った。</p>
       <div class="source">
 	<p>今コードがないので5問目まで今日解いた</p>
-	<pre class="brush:c++">#include &ltbits/stdc++.h&gt
-using namespace std;
-int main(){
-  int a;
-  cin &gt&gt a;
-  cout &lt&lt a * 32 &lt&lt endl;
-  return 0;
-}</pre>
+	<script src="https://gist.github.com/tinumu/b068ee7f2895c0c550def4354aad75ba.js"></script>
       </div>
       <h2>2問目</h2>
       <p>日の出と日の入りとはかいてあるけど半径と半径のずれどうなるとまずいかってだけだった。</p>
       <p>つまり和がマイナスだったら同じだったらプラスだったらっていう奴みるだけ</p>
       <div class="source">
-	<pre class="brush:c++">#include &ltbits/stdc++.h&gt
-using namespace std;
-int main(){
-  int a,b;
-  cin &gt&gt a &gt&gt b;
-  if(a + b &lt 0)cout &lt&lt -1 &lt&lt endl;
-  else if(!(a + b))cout &lt&lt 0 &lt&lt endl;
-  else cout &lt&lt 1 &lt&lt endl;
-  return 0;
-}</pre>
+	<script src="https://gist.github.com/tinumu/43db5513e5b171a24b8c98919657aa54.js"></script>
       </div>
       <h2>3問目</h2>
       <p>西暦とかだったのでめんどいなーって思ってたけど0だけ例外処理して1 ~ 4まで<br>
 	コンバートする配列作っとけばいいじゃんっておもったので、した。</p>
       <div class="source">
-	<pre class="brush:c++">#include &ltbits/stdc++.h&gt
-using namespace std;
-int main(){
-  int tosi[5] = {0,1867,1911,1925,1988};
-  char moji[5] = {' ','M','T','S','H'};
-  int E,Y; cin &gt&gt E &gt&gt Y;
-  if(!E){
-    int i = 5;
-    while(i--){
-      if(tosi[i] &lt Y){
-        cout &lt&lt (char)moji[i] &lt&lt Y - tosi[i] &lt&lt endl;
-        break;
-      }
-    }
-  }else cout &lt&lt tosi[E] + Y &lt&lt endl;
-  return 0;
-}</pre>
+	<script src="https://gist.github.com/tinumu/341c1061f0a2b5359eaab9996851ee73.js"></script>
       </div>
       <h2>4問目</h2>
       <p>問題みて最小公約数じゃねって思ってユークリッドどうやるっけってなったので<br>
 	相方がこうすりゃいいんじゃってなってすごかった。とけた。つよ</p>
       <div class="source">
-	<pre class="brush:c++">#include &ltbits/stdc++.h&gt
-using namespace std;
-int main(){
-  int a,b,c;
-  cin &gt&gt a &gt&gt b &gt&gt c;
-  int S = a * b;
-  if(a &lt b)swap(a,b);
-  while(b){
-    int temp = a;
-    a = b;
-    b = temp % b;
-  }
-  cout &lt&lt (S / (a * a)) * c &lt&lt endl;
-  return 0;
-}</pre>
+	<script src="https://gist.github.com/tinumu/c1f7c56f0766f7a700f7c27873148dc3.js"></script>
       </div>
       <h2>5問目</h2>
       <p>びっくりしたけどあれだった。フラグじゃできないじゃん。えー面倒だなー</p>
       <p>適当にソートしてにじゅうfor回せばいいかーっていう感想。</p>
       <div class="source">
 	<p>全然本番と違うコードだけど</p>
-	 <pre class="brush:c++">#include &ltbits/stdc++.h&gt
-using namespace std;
-#define F first
-#define S second
-#define pb push_back
-#define Pi pair&ltint,int&gt
-#define Pii pair&ltPi,int&gt
-int main(){
-  vector&ltPii&gtv;
-  int d[3];
-  int N;cin &gt&gt N;
-  for(int i = 0;i &lt N;i++){
-    cin &gt&gt d[0] &gt&gt d[1] &gt&gt d[2];
-    sort(d,d + 3);
-    Pii t;
-    t.F.F = d[0];t.F.S = d[1],t.S = d[2];
-    v.pb(t);
-  }
-  sort(v.begin(),v.end());
-  int a = v.size();
-  v.erase(unique(v.begin(),v.end()),v.end());
-  int b = v.size();
-  cout &lt&lt a - b &lt&lt endl;
-  return 0;
-}</pre>	   
+	<script src="https://gist.github.com/tinumu/aeece65a757ba1822b7aa9df81f34974.js"></script>
       </div>
       <h2>6問目</h2>
       <p>ひっくり返す問題。えーなにこれやばそう幅ダメじゃんいろいろやばそーじゃん。貪欲っぽいじゃん()</p>
@@ -152,37 +82,7 @@ int main(){
       <p>もっと頭のいい解き方あるみたいですが後程考えよう(ダメ)</p>
       <div class="source">
 	<p>本番のコード</p>
-	 <pre class="brush:c++">#include &ltbits/stdc++.h&gt
-using namespace std;
-typedef long long int64;
-int64 memo[1111][1111];
- 
-int64 dfs(int i,int cnt);
-string t,b;
- 
-int main(){
-  for(int i = 0;i &lt 1111;i++){
-    for(int j = 0;j &lt 1111;j++){
-      memo[i][j] = -1;
-    }
-  }
-  t += '0';
-  string a;
-  cin &gt&gt a &gt&gt b;
-  t += a;
-  cout &lt&lt dfs(0,0) &lt&lt endl;
-  return 0;
-}
- 
-int64 dfs(int i,int cnt){
-  int rec = 0;
-  if(cnt == b.size())return 1;
-  if(memo[i][cnt] != -1)return memo[i][cnt];
-  for(int j = i + 1;j &lt t.size();j++){
-    if(t[j] == b[cnt])rec = (rec + dfs(j,cnt + 1)) % 1000000007;
-  }
-  return memo[i][cnt] = rec % 1000000007;
-}</pre>	   
+	  <script src="https://gist.github.com/tinumu/e7bd2842980e73fcbdc11c82f3c849a5.js"></script>
       </div>
       <h2>そのあと</h2>
       <p>どうにか工夫を凝らして6問目を解こうとしたけどつらかった&gt&lt</p>
@@ -191,6 +91,15 @@ int64 dfs(int i,int cnt){
       <h2>感想</h2>
       <p>ペアでいろいろと協力してミスをなくすなどたくさんのところを補い合って強かった。</p>
       <p>PCKは素晴らしい!!!</p>
+      <h2>9問目</h2>
+      <p>9問目のパワーポイント作ろうっていう話になってたんだけど<br>
+	ソースコード作ろうってなって完成したので上げますね。<br>
+	いろんなところ参考にして回ったのですごいいろんな人に似てると思います。<br>
+      </p>
+      <div class="source">
+	<script src="https://gist.github.com/tinumu/ad477fe2e47d26cd385d78a53099e4b4.js"></script>
+      </div>
+      <p>見ていただいてありがとうございました!</p>
     </div>
   </body>
 </html>
