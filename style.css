@@ -34,6 +34,7 @@
     margin:5px;
 }
 .menu li{
+    list-style:none;
     border-left:10px solid #0000FF;
     background-color:#555555;
     width:240px;
