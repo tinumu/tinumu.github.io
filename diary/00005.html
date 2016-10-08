@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <script type="text/javascript" src="../syntax/scripts/shCore.js"></script>
+    <script type="text/javascript" src="../syntax/scripts/shBrushCpp.js"></script>
+    <link type="text/css" rel="stylesheet" href="../syntax/styles/shCoreDefault.css"/>
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Diary</title>
+  </head>
+  <body>
+    <div class="menu">
+      <div class="midashi">~Menu~</div>
+      <p><li><a href="../index.html">Top</a></li></p>
+      <p>自分の活動してるとこ</p>
+      <p><li><a href="http://www.twitter.com/tinumukiti631/">Twitter</a></li></p>
+      <p><li><a href="https://www.youtube.com/channel/UCovEOrisSvcI-TAmVnDWvgw">Youtube</a></li></p>
+      <p><li><a href="https://www.youtube.com/watch?v=kQ9bf50dgD8">I love nowmanzaw.</a></li></p>
+      <p><li><a href="../diary.html">Diary</a></li></p>
+      <p>競プロなところ</p>
+      <p><li><a href="http://judge.u-aizu.ac.jp/onlinejudge/index.jsp">AIZU ONLINE JUDGE</a></li></p>
+      <p><li><a href="http://Atcoder.jp">Atcoder</a></li></p>
+    </div>
+    <div class="Standard">
+      <h2>パソコン甲子園2016予選参加日記</h2>
+      <p>今回、レインボーナウマン象として参加したtinumuです。</p>
+      <p>7問目でWAを出しすぎて（）でした。もっといい解法あったらしい。</p>
+      <p>新人賞もらえたらしい。よかった。来年は本戦へLet's Go.したいね。</p>
+      <p>うろ覚えでなんで察して</p>
+      <br><br><br>
+      <h2>なんか</h2>
+      <p>最初、学校空いてると思って早く来る。おにいちゃんせんぱい(らしい)が同じくらいに来た。そのあと相方のアリス同盟（）がきた。</p>
+      <p>なごやかでした。アリス同盟さん意識高いので基本情報の本読んでた。つよ。</p>
+      <p>空いてる時間何したらいいかわからなかったので、Online Judgeしてました。</p>
+      <p>はじまった。</p>
+      <h2>1問目</h2>
+      <p>一瞬一問目からやばいの来たと思ったけど、あれ～入出力例みると32かけてあるだけじゃんと思った。</p>
+      <div class="source">
+	<p>今コードがないので5問目まで今日解いた</p>
+	<pre class="brush:c++">#include &ltbits/stdc++.h&gt
+using namespace std;
+int main(){
+  int a;
+  cin &gt&gt a;
+  cout &lt&lt a * 32 &lt&lt endl;
+  return 0;
+}</pre>
+      </div>
+      <h2>2問目</h2>
+      <p>日の出と日の入りとはかいてあるけど半径と半径のずれどうなるとまずいかってだけだった。</p>
+      <p>つまり和がマイナスだったら同じだったらプラスだったらっていう奴みるだけ</p>
+      <div class="source">
+	<pre class="brush:c++">#include &ltbits/stdc++.h&gt
+using namespace std;
+int main(){
+  int a,b;
+  cin &gt&gt a &gt&gt b;
+  if(a + b &lt 0)cout &lt&lt -1 &lt&lt endl;
+  else if(!(a + b))cout &lt&lt 0 &lt&lt endl;
+  else cout &lt&lt 1 &lt&lt endl;
+  return 0;
+}</pre>
+      </div>
+      <h2>3問目</h2>
+      <p>西暦とかだったのでめんどいなーって思ってたけど0だけ例外処理して1 ~ 4まで<br>
+	コンバートする配列作っとけばいいじゃんっておもったので、した。</p>
+      <div class="source">
+	<pre class="brush:c++">#include &ltbits/stdc++.h&gt
+using namespace std;
+int main(){
+  int tosi[5] = {0,1867,1911,1925,1988};
+  char moji[5] = {' ','M','T','S','H'};
+  int E,Y; cin &gt&gt E &gt&gt Y;
+  if(!E){
+    int i = 5;
+    while(i--){
+      if(tosi[i] &lt Y){
+        cout &lt&lt (char)moji[i] &lt&lt Y - tosi[i] &lt&lt endl;
+        break;
+      }
+    }
+  }else cout &lt&lt tosi[E] + Y &lt&lt endl;
+  return 0;
+}</pre>
+      </div>
+      <h2>4問目</h2>
+      <p>問題みて最小公約数じゃねって思ってユークリッドどうやるっけってなったので<br>
+	相方がこうすりゃいいんじゃってなってすごかった。とけた。つよ</p>
+      <div class="source">
+	<pre class="brush:c++">#include &ltbits/stdc++.h&gt
+using namespace std;
+int main(){
+  int a,b,c;
+  cin &gt&gt a &gt&gt b &gt&gt c;
+  int S = a * b;
+  if(a &lt b)swap(a,b);
+  while(b){
+    int temp = a;
+    a = b;
+    b = temp % b;
+  }
+  cout &lt&lt (S / (a * a)) * c &lt&lt endl;
+  return 0;
+}</pre>
+      </div>
+      <h2>5問目</h2>
+      <p>びっくりしたけどあれだった。フラグじゃできないじゃん。えー面倒だなー</p>
+      <p>適当にソートしてにじゅうfor回せばいいかーっていう感想。</p>
+      <div class="source">
+	<p>全然本番と違うコードだけど</p>
+	 <pre class="brush:c++">#include &ltbits/stdc++.h&gt
+using namespace std;
+#define F first
+#define S second
+#define pb push_back
+#define Pi pair&ltint,int&gt
+#define Pii pair&ltPi,int&gt
+int main(){
+  vector&ltPii&gtv;
+  int d[3];
+  int N;cin &gt&gt N;
+  for(int i = 0;i &lt N;i++){
+    cin &gt&gt d[0] &gt&gt d[1] &gt&gt d[2];
+    sort(d,d + 3);
+    Pii t;
+    t.F.F = d[0];t.F.S = d[1],t.S = d[2];
+    v.pb(t);
+  }
+  sort(v.begin(),v.end());
+  int a = v.size();
+  v.erase(unique(v.begin(),v.end()),v.end());
+  int b = v.size();
+  cout &lt&lt a - b &lt&lt endl;
+  return 0;
+}</pre>	   
+      </div>
+      <h2>6問目</h2>
+      <p>ひっくり返す問題。えーなにこれやばそう幅ダメじゃんいろいろやばそーじゃん。貪欲っぽいじゃん()</p>
+      <p>2枚っていうのがあれだなーと思いながらここでアリスさんが問題の解読を行ってくれた。</p>
+      <p>7問目先やってるっていうこと言って私はいってしまった。</p>
+      <h2>7問目</h2>
+      <p>ん～dpかーやろー(1つずつ見ていくことしかできないコードに)</p>
+      <p>TLE</p>
+      <p>直そうとして治らないので2,3回した。←めっ！</p>
+      <p>メモ化で行けるんじゃね、はい、WA</p>
+      <p>きれそうってなったけど6回ミスったときに出力ヤバイ！マイナスになってるｗって気づく。</p>
+      <p>パーセント入れるとこがおかしい。あ、ふーん...(察し)もっかいやる、WA</p>
+      <p>なおってない</p>
+      <p>はぁ…はぁ…(意味深ではない)AC</p>
+      <p>大損した（）そもそもいつもやってないことやろうとしたからミス招いた（）これなかったら20位くらい食い込めてた</p>
+      <p>もっと頭のいい解き方あるみたいですが後程考えよう(ダメ)</p>
+      <div class="source">
+	<p>本番のコード</p>
+	 <pre class="brush:c++">#include &ltbits/stdc++.h&gt
+using namespace std;
+typedef long long int64;
+int64 memo[1111][1111];
+ 
+int64 dfs(int i,int cnt);
+string t,b;
+ 
+int main(){
+  for(int i = 0;i &lt 1111;i++){
+    for(int j = 0;j &lt 1111;j++){
+      memo[i][j] = -1;
+    }
+  }
+  t += '0';
+  string a;
+  cin &gt&gt a &gt&gt b;
+  t += a;
+  cout &lt&lt dfs(0,0) &lt&lt endl;
+  return 0;
+}
+ 
+int64 dfs(int i,int cnt){
+  int rec = 0;
+  if(cnt == b.size())return 1;
+  if(memo[i][cnt] != -1)return memo[i][cnt];
+  for(int j = i + 1;j &lt t.size();j++){
+    if(t[j] == b[cnt])rec = (rec + dfs(j,cnt + 1)) % 1000000007;
+  }
+  return memo[i][cnt] = rec % 1000000007;
+}</pre>	   
+      </div>
+      <h2>そのあと</h2>
+      <p>どうにか工夫を凝らして6問目を解こうとしたけどつらかった&gt&lt</p>
+      <p>自分の解読が遅すぎたので席を入れ替えてがんばった。</p>
+      <p>38点勢に食い込めたのでなんとか()</p>
+      <h2>感想</h2>
+      <p>ペアでいろいろと協力してミスをなくすなどたくさんのところを補い合って強かった。</p>
+      <p>PCKは素晴らしい!!!</p>
+    </div>
+  </body>
+</html>

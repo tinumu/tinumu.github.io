@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <script type="text/javascript" src="../syntax/scripts/shCore.js"></script>
+    <script type="text/javascript" src="../syntax/scripts/shBrushCpp.js"></script>
+    <link type="text/css" rel="stylesheet" href="../syntax/styles/shCoreDefault.css"/>
+    <script type="text/javascript">SyntaxHighlighter.all();</script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Diary</title>
+  </head>
+  <body>
+    <div class="menu">
+      <div class="midashi">~Menu~</div>
+      <p><li><a href="../index.html">Top</a></li></p>
+      <p>自分の活動してるとこ</p>
+      <p><li><a href="http://www.twitter.com/tinumukiti631/">Twitter</a></li></p>
+      <p><li><a href="https://www.youtube.com/channel/UCovEOrisSvcI-TAmVnDWvgw">Youtube</a></li></p>
+      <p><li><a href="https://www.youtube.com/watch?v=kQ9bf50dgD8">I love nowmanzaw.</a></li></p>
+      <p><li><a href="../diary.html">Diary</a></li></p>
+      <p>競プロなところ</p>
+      <p><li><a href="http://judge.u-aizu.ac.jp/onlinejudge/index.jsp">AIZU ONLINE JUDGE</a></li></p>
+      <p><li><a href="http://Atcoder.jp">Atcoder</a></li></p>
+    </div>
+    <div class="Standard">
+      <h2>部活のスケジュール表 JOI2013予選4問目</h2>
+      <p>問題が解けたよ。PCKの日記は後程。</p>
+      <div class="source">
+	<h2>問題 (著作権に問題あったら消します…)</h2>
+	<p>IOI 高校のプログラミング部には，J 君と O 君と I 君の 3 人の部員がいる． プログラミング部では，部活のスケジュールを組もうとしている．</p>
+
+	<p>今，N 日間の活動のスケジュールを決めようとしている． 各活動日のスケジュールとして考えられるものは，各部員については活動に参加するかどうかの 2 通りがあり，部としては全部で 8 通りある． 部室の鍵はただ 1 つだけであり，最初は J 君が持っている． 各活動日には，その日の活動に参加する部員のうちのいずれか 1 人が鍵を持っている必要があり，活動後に参加した部員のいずれかが鍵を持って帰る．</p> 
+	
+	<p>プログラミング部では，活動日には毎回必ず活動が行われるように，あらかじめ各活動日の責任者を定めた． 責任者は，必ずその日の活動に出席しなければならない． </p>
+
+	<p>スケジュールを決めようとしている日数と，各活動日の責任者が誰であるかの情報が与えられた時，すべての活動日に部活動を行うことができるようなスケジュール表として考えられるものの数を 10007 で割った余りを求めるプログラムを作成せよ． ただし，部活の終了時に鍵を持って帰る部員は，その日の活動に参加している部員の誰でもよく，最終日は誰が鍵を持って帰ってもよいものとする．</p>
+      </div>
+      <p>ということなんですが文字数とその日の責任者が決められるみたいです。</p>
+      <p>こんなコード書いたよ</p>
+      <div class="source">
+	<pre class="brush:c++">#include &ltbits/stdc++.h&gt
+using namespace std;
+int N;
+int memo[1000][8]; //i data
+char per[] = {'J','O','I'};
+int bit[] = {4,2,1};
+int dfs(int i,int data);
+string S;
+int main(){
+  cin &gt&gt N &gt&gt S;
+  memset(memo,-1,sizeof(memo));
+  cout &lt&lt dfs(0,4) &lt&lt endl;
+  return 0;
+}
+ 
+int dfs(int i,int data){
+  int mask,rec = 0;
+  if(i == N)return 1;
+  if(~memo[i][data])return memo[i][data];
+  for(int j = 0; j &lt 3; j++){
+    if(S[i] == per[j]){
+      mask = bit[j];
+      break;
+    }
+  }
+  for(int j = 1; j &lt 8; j++){
+    if(mask & j && data & j)rec = (rec + dfs(i + 1,j)) % 10007;
+  }
+  return memo[i][data] = rec;
+}</pre>
+      </div>
+      <p>bitっぽくやりました。</p>
+      <p>Jを表す4を最初に入れておき、そのANDをとることでＪがいないとやばいということにし、<br>
+	現在のデータのS[i]で責任者いないとだめというANDをとるためにmaskデータを作成してそのANDをとります。<br>
+	そして後は終了条件刻んでメモ化して閉廷。</p>
+      <p>感想は前解けなかった奴が解けて成長を感じたって感じですんっ</p>
+      <p>というかんじです。</p>
+    </div>
+  </body>
+</html>
