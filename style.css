@@ -26,15 +26,17 @@
     color:white;
     background-color:#7777CC;
     text-align:center;
+    border-radius:6px;
     border-top:4px solid #AAAAFF;
     border-left:4px solid #8888DD;
     border-right:4px solid #6666BB;
     border-bottom:4px solid #444499;
+    margin:5px;
 }
 .menu li{
     border-left:10px solid #0000FF;
     background-color:#555555;
-    width:250px;
+    width:240px;
 }
 .menu li a{
     display:block;
@@ -42,7 +44,7 @@
     text-decoration:none;
 }
 .menu li a:hover{
-    width:275px;
+    width:265px;
     background-color:#CC5555;
     border-left:5px solid #0000FF;
 }
