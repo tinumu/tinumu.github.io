@@ -3,23 +3,24 @@
     font-family:'メイリオ';
 }
 .Standard{
+    left:320px;
+    width:1500px;
+    position:relative;
     text-align:left;
     font-size:18pt;
     color:black;
-    position:relative;
-    width:1500px;
-    top:0px;
-    left:280px;
 }
 .source{
     font-size:13pt;
     font-family:'メイリオ';
     background-color:white;
 }
-.menu{
+.togo{
     float:left;
-    width:240px;
-    height:1020px;
+    width:300px;
+    position:absolute;
+}
+.menu{
     font-size:14pt;
     font-family:'メイリオ';
     color:white;
@@ -29,12 +30,11 @@
     border-left:4px solid #8888DD;
     border-right:4px solid #6666BB;
     border-bottom:4px solid #444499;
-    position:fixed;
 }
 .menu li{
     border-left:10px solid #0000FF;
     background-color:#555555;
-    width:200px;
+    width:250px;
 }
 .menu li a{
     display:block;
@@ -42,7 +42,7 @@
     text-decoration:none;
 }
 .menu li a:hover{
-    width:225px;
+    width:275px;
     background-color:#CC5555;
     border-left:5px solid #0000FF;
 }
