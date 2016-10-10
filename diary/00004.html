@@ -42,36 +42,7 @@
       <p>ということなんですが文字数とその日の責任者が決められるみたいです。</p>
       <p>こんなコード書いたよ</p>
       <div class="source">
-	<pre class="brush:c++">#include &ltbits/stdc++.h&gt
-using namespace std;
-int N;
-int memo[1000][8]; //i data
-char per[] = {'J','O','I'};
-int bit[] = {4,2,1};
-int dfs(int i,int data);
-string S;
-int main(){
-  cin &gt&gt N &gt&gt S;
-  memset(memo,-1,sizeof(memo));
-  cout &lt&lt dfs(0,4) &lt&lt endl;
-  return 0;
-}
- 
-int dfs(int i,int data){
-  int mask,rec = 0;
-  if(i == N)return 1;
-  if(~memo[i][data])return memo[i][data];
-  for(int j = 0; j &lt 3; j++){
-    if(S[i] == per[j]){
-      mask = bit[j];
-      break;
-    }
-  }
-  for(int j = 1; j &lt 8; j++){
-    if(mask & j && data & j)rec = (rec + dfs(i + 1,j)) % 10007;
-  }
-  return memo[i][data] = rec;
-}</pre>
+	<script src="https://gist.github.com/tinumu/6959b6eeffd9cc318ce56b1cd3677639.js"></script>
       </div>
       <p>bitっぽくやりました。</p>
       <p>Jを表す4を最初に入れておき、そのANDをとることでＪがいないとやばいということにし、<br>

@@ -1,5 +1,5 @@
 ﻿body{
-    background-color:#C0C0C0;
+    background-color:#E0E0E0;
     font-family:'メイリオ';
 }
 .Standard{
@@ -7,7 +7,7 @@
     width:1500px;
     position:relative;
     text-align:left;
-    font-size:18pt;
+    font-size:14pt;
     color:black;
 }
 .source{
