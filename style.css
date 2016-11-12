@@ -3,6 +3,8 @@
     font-family:'メイリオ';
 }
 .Standard{
+    margin:30px;
+    border:1px solid #808080;
     left:320px;
     width:1150px;
     position:relative;
@@ -31,7 +33,7 @@
     border-left:4px solid #8888DD;
     border-right:4px solid #6666BB;
     border-bottom:4px solid #444499;
-    margin:5px;
+    margin:6px;
 }
 .menu li{
     list-style:none;
