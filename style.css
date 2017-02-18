@@ -3,8 +3,9 @@
     font-family:'メイリオ';
 }
 .Standard{
+    background-color:#EEEEEE;
     margin:30px;
-    border:1px solid #808080;
+    border:25px solid #EEEEEE;
     left:320px;
     width:1150px;
     position:relative;
@@ -52,8 +53,9 @@
     border-left:5px solid #0000FF;
 }
 h2{
+    color:white;
     text-align:center;
-    background-color:#00FFFF;
+    background-color:#005555;
 }
 .midashi{
     font-size:20pt;
