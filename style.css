@@ -2,7 +2,7 @@
     background-color:#E0E0E0;
     font-family:'メイリオ';
 }
-.Standard{
+.Standard {
     background-color:#EEEEEE;
     margin:30px;
     border:25px solid #EEEEEE;
@@ -13,17 +13,17 @@
     font-size:14pt;
     color:black;
 }
-.source{
+.source {
     font-size:13pt;
     font-family:'メイリオ';
     background-color:white;
 }
-.togo{
+.togo {
     float:left;
     width:300px;
     position:absolute;
 }
-.menu{
+.menu {
     font-size:14pt;
     font-family:'メイリオ';
     color:white;
@@ -36,27 +36,27 @@
     border-bottom:4px solid #444499;
     margin:6px;
 }
-.menu li{
+.menu li {
     list-style:none;
     border-left:10px solid #0000FF;
     background-color:#555555;
     width:240px;
 }
-.menu li a{
+.menu li a {
     display:block;
     color:white;
     text-decoration:none;
 }
-.menu li a:hover{
+.menu li a:hover {
     width:265px;
     background-color:#CC5555;
     border-left:5px solid #0000FF;
 }
-h2{
+h2 {
     color:white;
     text-align:center;
     background-color:#005555;
 }
-.midashi{
+.midashi {
     font-size:20pt;
 }
