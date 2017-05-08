@@ -1,5 +1,6 @@
-﻿body{
-    background-color:#E0E0E0;
+﻿body {
+    background-attachment:fixed;
+    background-image:url(./sky.png);
     font-family:'メイリオ';
 }
 .Standard {
@@ -22,6 +23,8 @@
     float:left;
     width:300px;
     position:absolute;
+    padding:10px;
+    background-color:#EEEEEE;
 }
 .menu {
     font-size:14pt;
@@ -52,11 +55,42 @@
     background-color:#CC5555;
     border-left:5px solid #0000FF;
 }
+.Standard ul {
+    list-style:none;
+    font-size:16pt;
+    font-weight:700;
+    background-color:#0000DD;
+}
+.Standard li {
+    background-color:white;
+    padding:3px;
+    padding-left:10px;
+    border-bottom:1px solid #0000DD;
+}
+.Standard li a {
+    display:block;
+    text-decoration:none;
+    color:black;
+}
+
+.Standard li a:hover {
+    background-color:#FFCCCC;
+}
+
 h2 {
-    color:white;
-    text-align:center;
-    background-color:#005555;
+    color:black;
+    background-color:white;
+    border-left:8px solid #0000DD;
+    border-bottom:1px solid #0000DD;
+    padding-left:15px;
 }
 .midashi {
     font-size:20pt;
+}
+h1 {
+    font-weight:100;
+    border:1px solid #0000DD;
+    border-left:15px solid #0000DD;
+    background-color:white;
+    padding-left:15px;
 }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>tinumuのホームページ</title>
+  </head>
+  <body>
+    <div class="togo">
+      <div class="menu">
+	<div class="midashi">~Menu~</div>
+	<p><li><a href="../index.html">Top</a></li></p>
+	<p>自分の活動してるとこ</p>
+	<p><li><a href="http://www.twitter.com/tinumukiti631/">Twitter</a></li></p>
+	<p><li><a href="https://www.youtube.com/channel/UCovEOrisSvcI-TAmVnDWvgw">Youtube</a></li></p>
+	<p><li><a href="https://www.youtube.com/watch?v=kQ9bf50dgD8">I love nowmanzaw.</a></li></p>
+	<p><li><a href="../diary.html">Diary</a></li></p>
+	<p><li><a href="../mathcpr.html">競プロとかの知識</a></li></p>
+	<p>競プロなところ</p>
+	<p><li><a href="http://judge.u-aizu.ac.jp/onlinejudge/index.jsp">AIZU ONLINE JUDGE</a></li></p>
+	<p><li><a href="http://Atcoder.jp">Atcoder</a></li></p>
+	<p><li><a href="http://hoj.hamako-ths.ed.jp/onlinejudge">HAMAKO ONLINE JUDGE</a></li></p>
+      </div>
+      <a class="twitter-timeline"  href="https://twitter.com/search?q=tinumukiti631" data-widget-id="784761809576206337">tinumukiti631に関するツイート</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+    <div class="Standard">
+      <h1>再帰関数</h1>
+      <p>再帰関数の基本的な知識から応用的な知識を書き込もうと思います。</p>
+      <h2>再帰関数とは？</h2>
+      <p>再帰関数とは、関数の中からその関数自身を呼び出すような処理を行う関数のことである。</p>
+      <p>つまり、言い換えれば、<span style="font-size:16pt; font-weight:700"> 関数の中で、全く同じ関数を要求するような関数</span>ということである。</p>
+      <h3>正整数 <var>n</var> の階乗を求める関数 <var>F(n)</var></h3>
+      <p>これを例にして考えてみよう。</p>
+      <p>まず、<var>F(n)</var> を再帰を使用して数式で書いてみる(数式?)</p>
+      <ul>
+	<li><var>F(n) = n × F(n - 1)</var>   　　……<var>(0 < n)</var></li>
+	<li><var>F(0) = 1</var>　　  　　　　　 ……<var>(n = 0)</var></li>
+      </ul>
+      <p> <var>F(n)</var> を求めるには、 <var>F(n - 1)</var> と <var>n</var> を掛け合わせた値が必要である。</p>
+      <p> 例えば、<var>n = 5</var> だとすると、<span style="font-size:16pt; font-weight:700">5 × (4の階乗)を求めれば、5の階乗が求められる</span>ということである。</p>
+      <p> <var>F(n) = n × F(n - 1)</var> だけだと無限に関数が呼び出されてしまうため、<var> F(0) = 1 </var> ( <var> 0!  = 1</var> ) を定義し、<br>
+	<var>F(0) = 1</var> が求められたので、<br>
+	<var>F(1) = 1 * 1 = 1, F(2) = 2 * 1 = 2, F(3) = 3 * 2 = 6, F(4) = 4 * 6 = 24,</var> ……<br>
+      といったように、順番に値が決まっていき、最終的に値が返ってくるという仕組みである。</p>
+      <p> つまり再帰関数とは、関数で返る値を求めるために、引数(例えば <var>F(n)</var> の <var>n</var> )を変えた同様の関数を展開し、<br>
+	自明な(特に説明しなくても明らかな)解を用いることで<br>
+	そこから順番に部分解が返り、返り、返り、……といったことが繰り返されるような関数ということである。</p>
+      <h2>まだまだ執筆中</h2>
+    </div>
+  </body>
+</html>
