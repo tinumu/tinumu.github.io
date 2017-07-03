@@ -2,13 +2,15 @@
     background-attachment:fixed;
     background-image:url(./sky.png);
     font-family:'メイリオ';
+    width : 1400px;
+    margin-right: auto;
+    margin-left: auto;
 }
 .Standard {
+    float:right;
     background-color:#EEEEEE;
-    margin:30px;
     border:25px solid #EEEEEE;
-    left:320px;
-    width:1150px;
+    width:1000px;
     position:relative;
     text-align:left;
     font-size:14pt;
@@ -22,7 +24,6 @@
 .togo {
     float:left;
     width:300px;
-    position:absolute;
     padding:10px;
     background-color:#EEEEEE;
 }
