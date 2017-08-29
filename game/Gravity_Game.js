@@ -186,7 +186,7 @@ function Main()
         }
 
         context.fillStyle = "black";
-        context.fillText("Acceralation  Lv." + speed, 100, 620);
+        context.fillText("Accelalation  Lv." + speed, 100, 620);
         context.fillText("Speed         =  " + parseInt(Math.sqrt(px[idx] * px[idx] + py[idx] * py[idx]) * 1000) / 1000, 100, 640);
         context.fillText("Point = " + point, 500, 640);
         context.fillText(("0" + parseInt(rest / 60)).slice(-2) + ":" + ("0" + parseInt(rest % 60)).slice(-2), 735, 640);
