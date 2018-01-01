@@ -1,0 +1,66 @@
+﻿body
+{
+    background-attachment:fixed;
+    font-family:'メイリオ';
+    background-color:#EEEEEE;
+    border:25px solid #EEEEEE;
+    position:relative;
+    text-align:left;
+    font-size:14pt;
+    color:black;
+    margin: auto;
+    padding: 20px;
+}
+
+.source 
+{
+    font-size:13pt;
+    font-family:'メイリオ';
+    background-color:white;
+}
+
+ul 
+{
+    list-style:none;
+    font-size:16pt;
+    font-weight:700;
+    background-color:#0000DD;
+}
+
+li 
+{
+    background-color:white;
+    padding:3px;
+    padding-left:10px;
+    border-bottom:1px solid #0000DD;
+}
+
+li a
+{
+    display:block;
+    text-decoration:none;
+    color:black;
+}
+
+li a:hover 
+{
+    background-color:#FFCCCC;
+}
+
+h2
+{
+    color:black;
+    background-color:white;
+    border-left:8px solid #0000DD;
+    border-bottom:1px solid #0000DD;
+    padding-left:15px;
+}
+
+h1
+{
+    font-weight:100;
+    border:1px solid #0000DD;
+    border-left:15px solid #0000DD;
+    background-color:white;
+    padding-left:15px;
+}
