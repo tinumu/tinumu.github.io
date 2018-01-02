@@ -6,7 +6,15 @@
 <title>tinumuのホームページ</title>
 </head>
 <body>
-<iframe id="parent-iframe1" src="menu.html" name="menu" width="320px" height="1040px"  frameborder="0"></iframe>
-<iframe id="parent-iframe2" src="main.html" name="main" width="1000px" height="1040px" frameborder="0"></iframe>
+<table align="center">
+<tr>
+<td><iframe id="parent-iframe1" src="menu.html" name="menu" width="320px" height="960px"  frameborder="0"></iframe></td>
+<td><iframe id="parent-iframe2" src="main.html" name="main" width="1000px" height="960px" frameborder="0"></iframe></td>
+<script type="text/javascript">
+    var data = sessionStorage.getItem('jump');
+    if(data != null) document.getElementById('parent-iframe2').src = data;
+</script>
+</tr>
+</table>
 </body>
 </html>
