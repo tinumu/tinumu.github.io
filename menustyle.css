@@ -5,7 +5,7 @@ body
 
 .menu {
     font-size:14pt;
-    font-family:'メイリオ';
+    font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic Pro", "Meiryo", "MSPGothic", "sans-serif";
     color:white;
     background-color:#7777CC;
     text-align:center;
@@ -28,10 +28,10 @@ body
     display:block;
     color:white;
     text-decoration:none;
+    padding : 3px;
 }
 
 .menu li a:hover {
     width:265px;
     background-color:#CC5555;
-    border-left:5px solid #0000FF;
 }

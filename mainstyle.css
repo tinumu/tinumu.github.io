@@ -1,12 +1,12 @@
 ﻿body
 {
     background-attachment:fixed;
-    font-family:'メイリオ';
+    font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic Pro", "Meiryo", "MSPGothic", "sans-serif";
     background-color:#EEEEEE;
     border:25px solid #EEEEEE;
     position:relative;
     text-align:left;
-    font-size:14pt;
+    font-size:12pt;
     color:black;
     margin: auto;
     padding: 20px;
@@ -15,14 +15,13 @@
 .source 
 {
     font-size:13pt;
-    font-family:'メイリオ';
     background-color:white;
 }
 
 ul 
 {
     list-style:none;
-    font-size:16pt;
+    font-size:14pt;
     font-weight:700;
     background-color:#0000DD;
 }
@@ -49,6 +48,7 @@ li a:hover
 
 h2
 {
+    font-weight:100;
     color:black;
     background-color:white;
     border-left:8px solid #0000DD;
