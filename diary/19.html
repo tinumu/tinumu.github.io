@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../mainstyle.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [['$','$'], ['\\(','\\)']],
+processEscapes: true
+},
+CommonHTML: { matchFontHeight: false }
+});
+</script>
+
+<title>Diary</title>
+</head>
+<body>
+<h1>JOI2007春合宿3-1 Anagram</h1>
+<h2>概要</h2>
+<p>
+与えられた文字列 $S$ を並び替えて出来る文字列の中で、$S$ は辞書順で何番目になるか出力せよ。
+</p>
+<h2>制約</h2>
+<ul>
+<li>$1 \leq |S| \leq 20$</li>
+</ul>
+<h2>解法</h2>
+<p>
+自分の文字列よりも小さいアナグラムの数 + 1 が自分が何番目か示す文字になるはずである。<br>
+例えば文字列"HEART"について考えてみよう。<br>
+この時、先頭の文字を'A' や 'E' にした時、必ず元の文字列よりも辞書順で小さくなることが分かる。<br>
+小さくなるように文字を決め打ちしたとき、後ろの文字列の組合せを考えればよいことになる。<br>
+求め方は数Aとかの同じものを含む順列ってところでいろいろやる。自分は${}_nC_x \times {}_{n - x}C_y \times ...$ みたいにやった。<br>
+次に、先頭の文字を'H'にすると、その次の文字が'A'のような'E'より小さい文字ならばまたその先の文字の組合せを求めていけばいいことが分かる。<br>
+</p>
+<p>
+$k - 1(1 \leq k \leq |S|)$ 番目の文字列まで $S$ と一致させた $T$ を $T_k \lt S_k$ となるようにした時にできる文字列の組み合わせを $A_k$とすると、<br>
+自分の文字列よりも小さいアナグラムの数 $ = \sum_{k = 1}^{|S|} A_k $ ということになる。これに+1をしてこの問題は解ける。<br>
+計算量は小さいので省略する。<br>
+再帰的な構造とも見立てることが出来る。<br>
+</p>
+<h2>ソース</h2>
+<script src="https://gist.github.com/tinumu/7f0ac86943eb66db79e1095a7cdc23d3.js"></script>
+<h2>感想</h2>
+<p>
+何を見い出せばいいのかわからないけど、「小問題は簡単な計算で分かってしまう」というような場合があるため、そこを見張っていきたい。<br>
+後文字列の構造として、先頭だけで大きさが決まるような場合があることも念頭に考えておきたい。
+</p>
+</body>
+</html>
