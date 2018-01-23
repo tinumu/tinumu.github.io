@@ -64,3 +64,11 @@ h1
     background-color:white;
     padding-left:15px;
 }
+
+pre
+{
+    background-color : white;
+    border:1px solid #0000DD;
+    border-left:4px solid #0000DD;
+    padding : 5px;
+}

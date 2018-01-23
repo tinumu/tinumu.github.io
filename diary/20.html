@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../mainstyle.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [['$','$'], ['\\(','\\)']],
+processEscapes: true
+},
+CommonHTML: { matchFontHeight: false }
+});
+</script>
+
+<title>Diary</title>
+</head>
+<body>
+<h1>AGC020 参加記録</h1>
+<h2>あいさつ</h2>
+<p>
+AGC020に参加しました。最高パフォーマンス2188が出せました。<br>
+とはいえ、Cが解けなかったことは残念でしたね。<br>
+今回は問題の記憶を明確に残すために参加記録として日記に記したいと思います。<br>
+</p>
+<h2>A - Move and Win　</h2>
+<p>
+<a href="https://agc020.contest.atcoder.jp/tasks/agc020_a">これ</a><br>
+前提として、アリスはボリスを押し込めば勝ち、ボリスはアリスを押し込めば勝ちということになる。<br>
+2人が隣接しているときに手番となっているほうは、自分から見て不利な方向にしか移動できなくなる。<br>
+その後、相手が押し込んでいって負けとなってしまう。<br>
+自分の手番が来るとき、必ず距離の偶奇は保たれるため、最初の距離の偶奇が試合の結果を左右することになる。<br>
+距離 $B - A$ が偶数の時、隣接するときはボリスの手番であるので、アリスが勝ち、奇数の時は隣接時アリスの手番より、ボリスが勝つ。<br>
+<script src="https://gist.github.com/tinumu/fbea87faf2676e04c1ccad2168aaa169.js"></script>
+こういう形の問題は発想を思いつくのが難しいので、たくさん書いて小さいテストケースを試してみるといいかもしれない。
+</p>
+<h2>B - Ice Rink Game　</h2>
+<a href="https://agc020.contest.atcoder.jp/tasks/agc020_b">これ</a><br>
+最後に必ず2人残るということが決まっているため、そこから考えていく。<br>
+$i(1 \leq i \leq K)$ 番目のゲームが終わったときの最少人数を $L_i$ , 最多を $R_i$ とする。<br>
+このとき、何もゲームが始まっていない $L_0$ , $R_0$ を求めることが目的である。<br>
+実は、$L_i$ , $R_i$ の値を使用して、 $L_{i - 1}$ , $R_{i - 1}$ の値を求めることが可能である。<br>
+<pre>4
+3 4 3 2</pre>
+このテストケースを考えてみる。<br>
+定義より $L_4 = R_4 = 2$ である。<br>
+$A_4 = 2$ より、$3$ 人のグループと $2$ 人のグループであれば $2$ 人になってくれるということが分かる。<br>
+つまり、$L_3 = 2, R_3 = 3$ であることが分かった。<br>
+次に、$A_3 = 3$ であるが、残る人数は必ず $3$ の倍数になることが分かるので、現在最小である $2$ を捨て、$3$ になったときについて考えるようになる。<br>
+そうすると、$L_2 = 3, R_2 = 5$ というようになる。<br>
+これを一般的にすると、$L_{i - 1} = \frac{L_i + A_i - 1}{A_i} \times A_i$, $R_{i - 1} = \frac{R_i}{A_i} \times A_i + A_i - 1$ ということになる。<br>
+$L$ と $R$ の中の値であれば必ず、最終的に2人になる。<br>
+例えば $L_k = 2, R_k = 7$ で、$A_k = 3$ だった時に計算をする場合、実際は3, 6 人になる(3の倍数であり得る数)ことが分かるが、<br>
+これになるには 3, 4, 5, 6, 7, 8人の場合があり得、3人になる3,4,5人と、6人になる6,7,8とで、連続を保つことが出来る。
+求めていくと $L_0$ , $R_0$ が求まる。
+<script src="https://gist.github.com/tinumu/b65c2b94b135ad8e0e4be879ce461978.js"></script>
+うまく解説ができない。基底条件となりそうな値を見つけて、そこからどうやって大きくしていくかという観点は重要であると感じた。
+<h2> C - Median Sum　</h2>
+後々解説します。
+</body>
+</html>
