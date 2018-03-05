@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../mainstyle.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [['$','$'], ['\\(','\\)']],
+processEscapes: true
+},
+CommonHTML: { matchFontHeight: false }
+});
+</script>
+
+<title>Diary</title>
+</head>
+<body>
+<h1>JOI2008-2009春合宿1-1 Sequence(数列)</h1>
+<h2>概要</h2>
+<p>
+数列 { $A_n$ } は $A_1$ から $A_m$ までが入力によって与えられ、 $A_i = A_{i - 1} + A_{i - m}$ である。この第 $p$ 項から第 $q$ 項 { $A_p , ... , A_q$ } に含まれる奇数の個数を求めよ。
+</p>
+<h2>制約</h2>
+<ul>
+<li>$2 \leq m \leq 24$</li>
+<li>$1 \leq p \lt q \leq 2^{60}$</li>
+</ul>
+<h2>解法</h2>
+<p>
+この問題はある項が奇数であるかどうかを判断すればいいので、数列の値は偶奇だけが分かればよいことが分かる。<br>
+$A_i , ... , A_{i + m - 1}(1 \leq i)$ までの数列の偶奇のパターンが<br>
+$A_j , ... , A_{j + m - 1}(1 \leq j)$ と同じであるならば、<br>
+$A_{i + 1} , ... , A_{i + m} = A_{j + 1} , ... , A_{j + m}$ である。<br>
+異なるパターンを生成し続けたとしても同じパターンが出てくるまで最大 $2^m$ パターン続く。<br>
+制約は $2 \leq m \leq 24$ であるので、最大 $2^{24}$ パターンであり、繰り返されるパターン $1$ 個分を高速に生成できることが分かる。<br>
+その繰り返されるパターン $1$ 個の奇数の個数を保持しておき、$p$ 項から $q$ 項までで使えるところに使ってやれば残った区間の長さは $2^m$ 以下であるわけだ。<br>
+そこを頑張って計算し、頑張ると解ける(語彙不足)。<br>
+<img src="Sequence_explain.png"><br>
+図のようにこのような感じで見て、自分は頑張ってやった。<br>
+累積和っぽくやったほうが楽に解けたかもしれない。
+</p>
+<h2>ソース</h2>
+<script src="https://gist.github.com/tinumu/e0bbc05b13b8a94f0c9ea3c52cf24bdd.js"></script>
+なんかいやーなソースコードになってしまった。<br>
+<h2>感想</h2>
+<p>
+最初に$m$ 個だけ離れたパターンに対して関係あるって思って計算がすごいことになったり、<br>
+$1$ 区間の大きさが $m$ の大きさで一意に決まると思ったりしてしまった。<br><br>
+偶数・奇数とかの問題になるときは、値の偶奇しか関係なくなってしまうということや、<br>
+区間についてのパターンは区間の大きさだけ飛ばしたところに関係するのではなく、<br>
+重複していてもよいのですぐ右にだけ関係するのだなということが分かった。<br>
+制約からヒントを貰うことが出来るみたいである(既知だが)。<br>
+また、証明しきってない(証明とまではいかなくても理由が分からない)ことをあえてやるのはやめたほうが良い。<br>
+</p>
+</body>
+</html>
