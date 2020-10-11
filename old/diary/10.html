@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../mainstyle.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+inlineMath: [['$','$'], ['\\(','\\)']],
+processEscapes: true
+},
+CommonHTML: { matchFontHeight: false }
+});
+</script>
+
+<title>Diary</title>
+</head>
+<body>
+<h1>JOI2008春合宿Day2-1 Nile.com</h1>
+<p>ホームページのテストもかねて解説しようと思います</p>
+<h2>概要</h2>
+<p>とある一種類の商品を買うとする。</p>
+<p>$D$日間毎日インターネットで$N$店舗の中から$1$店舗を選んで商品を買う。</p>
+<p>各店舗の価格は異なる($10$の倍数)。$2$日連続同じ店舗で買うと、$1$割引、$3$日以上だと$3$割引される。</p>
+<p>適切に店舗を選んでいったときに、$D$日間に支払う合計金額が最小になる金額を求めよう。</p>
+<h2>制約</h2>
+<ul>
+<li>$2 \leq D \leq 365$</li>
+<li>$2 \leq N \leq 3000$</li>
+<li>商品の値段は$10$ ~ $100000$</li>
+</ul>
+<h2>解法</h2>
+<p>
+DP。dp[日数][現在選んでいる店舗][何回連続か]というようにやる。<br>
+0回連続はいらないことに加え、2回連続買ったかまで分かれば1割引, 3割引かわかるので何回連続かの部分は[2]でいい。<br>
+したがってdp[400][3005][2]くらい持たせればいい。
+</p>
+<p>
+DPの遷移だが、新しい店舗へすべての場合から遷移しようとすると、そこだけで、O(N)かかってしまい、全体としてはO(DN^2)になり、間に合わない。<br>
+考えると、新しい店舗に移動するときは現在最小のコストのところから遷移するといいことが分かる。<br>
+なぜなら、どの別の店から来ても買う商品の値段は均一だからである。<br>
+最小コストである店舗からすべての店へ遷移させておく。同じ店への遷移でもこの場合は大丈夫。<br>
+あとは、連続で店舗に行っている場合の遷移をかけばいい。
+</p>
+<h2>ソース</h2>
+<script src="https://gist.github.com/tinumu/6d952d51859628a032fcc7d9f04dbb2f.js"></script>
+<h2>感想</h2>
+<p>DPの高速化のアイデアを浮かばせるときは、「無駄なことをしていないか」という観点をよく持つといいんじゃないのかなって思った。</p>
+</body>
+</html>
