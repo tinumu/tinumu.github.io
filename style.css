@@ -5,7 +5,7 @@ body {
     width            : 1280px;
     margin           : 20px auto;
     color            : white;
-    font-family      : "Meiryo";
+    font-family      : "Helvetica Neue", "Arial", "Hiragino Kaku Gothic Pro", "Meiryo", "MSPGothic", "sans-serif";
 }
 
 h2 {
