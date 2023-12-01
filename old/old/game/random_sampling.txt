@@ -1,0 +1,17 @@
+単語だけでも書いておこうね(理系のやつなのに悲しい)
+ベイズ推定 ニューラルネット
+
+Markov Chain Monte Carlo
+
+Metropolis-Hasting法
+f(a)に比例した確率分布をサンプルしたい
+
+cf.simulated annealing いつもの焼きなましだよ
+
+Hamiltonian Monte Carlo 運動量がなんたらかんたら　勾配
+
+coupling from the past
+propp-Wilson algorithm (CFTP, Coupling from the past)
+MCMC の定常状態のサンプルにすっごい近似できる すっごーい！
+
+

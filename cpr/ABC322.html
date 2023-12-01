@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>tinumuのホームページ</title>
+        <link rel=stylesheet type="text/css" href="../style.css">
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+		</script>
+		<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+		</script>
+		<meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />
+    </head>
+    <body>
+		<h1>ABC322 参加の感想</h1>
+		<a href="index.html"> 目次に戻る </a>
+		<h2>概要</h2>
+		<p>
+			<a href="https://atcoder.jp/contests/abc322">ABC322のリンクですよ！</a>
+		</p>
+        <p>
+			今回は良かったっすねー。Eで手こずったのがちょっと痛かったけど、Fは山を当てた。
+			ということでABCDEFの6完。Gはよくわからないし、まあ満足してます。
+        </p>
+		<h2>A - First ABC 2</h2>
+		<p>
+			string::find を使う。頑張る。
+		</p>
+		<h2>B - Prefix and Suffix</h2>
+		<p>
+			string::substr を使う。頑張る。
+		</p>
+		<h2>C - Festival</h2>
+		<p>
+			lower_boundを使う。頑張る。
+		</p>
+		<h2>D - Polyomino</h2>
+		<p>
+			AtCoderはあんまりこういう問題を出してこなかったイメージだけど、やっぱり実装力も試す問題を出すようにしてきたのかなぁ。
+			それぞれのポリオミノに対して回転したもの４つに対して、上下左右に動かしたものを用意して、
+			それを全部配列に入れていく。これを３つに対して行うので、３つの配列ができる。
+			この３つの配列の中から、ポリオミノを選び出して、このときにちゃんとはまったら、YESにする。
+		</p>
+		<p>
+			凄まじくコードのコピペを繰り返して、やった。
+			関数に入れて処理するなんていう考えがめんどくて、めっちゃコードが長くなった・・・w
+			でもわりとすんなり実装できたのはよかった。
+		</p>
+		<h2>E - Product Development</h2>
+		<p>
+			現在の $i$ とあとどのくらいパラメータが必要か $now$ をキーにしたmapをメモ配列にして、DPをする。
+			全然バグが取れなくて、最終的にどこがおかしかったかというと、メモ配列がlong long型になってなかった、ってことだった。
+			なんか、変な値が急にでてきて、配列外参照かな？って思ってちょっとミスリードをしていた。
+		</p>
+		<p>
+			そうだよなぁ。mapでDPをあんまり書いたことないという経験不足がちょっとあるのかもね。30分くらいかかっちゃった。
+		</p>
+		<h2>F - Vacation Query</h2>
+		<p>
+			普通のセグ木の類題をHOJで解いてたのもあって、これがすぐに遅延セグ木だとわかった。
+			勝手に紹介して良いのかな。<br>
+			<a href="https://hoj.hamako-ths.ed.jp/onlinejudge/problems/1663"> All you need is Segment Tree. </a>
+			という問題なのだけれども。この問題には本当に感謝しかない。この問題の更新クエリのところを今回は区間でやろうっていうことだった。
+		</p>
+		<p>
+			今回は、区間に対して一気にデータを変えないといけないので、セグ木に乗せるデータ自体も変えないといけなかった。
+			だがこれは、0 に対するmaxlen, llen, rlen と、1 に対する maxlen, llen, rlen を同時に持つことで、データの反転に対応できる。
+			データの反転時に、0のデータと1のデータをスワップすればいいだけなのだ。
+		</p>
+		<p>
+			そして、自分の遅延セグ木はバグっていたので、非可換に対応できるように修正。これにて、解くことができた。
+			初めて遅延セグ木を問題に適応して、アドリブでよくできたなと、自分ながら褒めたい。
+			使い方すらもはや忘れてたし。まだ理解が足りてないね。
+		</p>
+		<h2>感想</h2>
+		<p>
+			perf=2108だった。Eのバグ修正がなぁ・・・ｗ 
+			今回のコンテストは少し AtCoder らしからぬ(なんて勝手にイメージを持っちゃってるけど)感じでしたね。
+			ある意味得意分野だったのかもしれない。ただ自分も実装力が鈍ってたなぁ。
+		</p>
+		<p>
+			Fも解説見たけど、遅延セグ木が想定解だったみたい。
+			AtCoderだからデータ構造で殴る問題はでないだろうみたいな偏見は捨てたほうが良いかもね。
+			まあ今回は嬉しいっす！
+		</p>
+		(2023/09/30 23:06)
+        <hr>
+		<a href="index.html"> 目次に戻る </a>
+	</body>
+</html>

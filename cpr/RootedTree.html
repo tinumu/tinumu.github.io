@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>tinumuのホームページ</title>
+        <link rel=stylesheet type="text/css" href="../style.css">
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+		</script>
+		<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+		</script>
+		<meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />
+    </head>
+    <body>
+		<h1>根付き木のライブラリを書いてみたよ</h1>
+		<a href="index.html"> 目次に戻る </a>
+		<h2>概要</h2>
+		<p>
+			書いてみたとはいえど、思いついたのをぱっとやっただけなんで、もっといい方法で実装できるかも。
+			根付き木に対して、エッジに可換なモノイドを乗っけることができる。
+			この際、何かしらの二点間のノード $u$ , $v$ に対しての高速なクエリ処理ができる。
+			更新クエリとかも使えないんで、使う用途はあんまりないかも。でもダブリングとかそういう系がでたら使える。
+		</p>
+		<p>
+			使える関数。
+			<ul>
+				<li> add_edge(from, to, weight) : from-to のエッジを追加する(無向)。重みを乗っける $O(1)$ </li>
+				<li> build(root) : root を根とした根付き木を形成する(add_edgeの処理が全部終わったあと) $O(N \log N)$ </li>
+				<li> lca(u, v) : $u$ , $v$ における最小共通祖先を見つける  $O(\log N)$ </li>
+				<li> query(u, v) : $u$ , $v$ 間のパスのクエリを求める  $O(\log N)$  </li>
+			</ul>
+		</p>
+		<p>
+			lca の計算量について、最初 2 分探索しないといけないから $O(\log^2 N)$ じゃないかと思っていたんだけれども、
+			すでに計算済みのダブリングしたものがあるからそれを活用すれば $O(\log N)$ に落とせることがわかった。
+			もうこれで怖くない。この計算量の改良は、<a href="https://tubo28.me/compprog/algorithm/doubling-lca/"> tubo28氏のライブラリ </a>
+			を勝手ながら参考にさせていただきました。助かりました。
+		</p>
+		<h2>なんで作ったの</h2>
+		<p>
+			ここからはお気持ち。AtCoder の <a href="https://atcoder.jp/contests/abc235/tasks/abc235_e"> MST + 1 </a> という問題を解いた。
+			この問題は最小全域木に辺を一つ入れてそっちに辺が入れ替わるかという問題に帰着するが、
+			この際、その入れる辺 $(u, v)$ 間の辺の中にひとつでも $w$ より大きい辺があれば、その辺を取り除いて $(u, v)$ を新たな辺にする
+			ことで新しい最小全域木が完成する。
+		</p>
+		<p>
+			そこで問題になるのが、$(u, v)$ 間の辺の中の最大の重みはなにかということである。
+			ここで、その最大値を探すために、木のダブリングを使ってある 頂点 $u$ の (1 &lt&lt b) 個前の祖先までの範囲の最大値を取るということをした。
+			そうすれば、祖先について $O(\log N)$ で辺の最大値を出してくれる。
+		</p>
+		<p>
+			しかしいま問いているのは、$(u, v)$ 間についてであるので、そこで、lca によって最小共通祖先を求めて、
+			$u$ から lca まで、 $v$ から lca までの辺の最大値をとり、それを組み合わせれば求まるというわけである。
+		</p>
+		<p>
+			これを自前で実装したら、ちゃんとACした。めちゃくちゃ嬉しい。ただ実装がおもすぎる。
+			案の定、想定解は違い、クエリを先読みして、クラスカルの最中にクエリを処理することでACできる。
+			でもこれが思いつかなかったりする場合とかは、この根付き木の実装を書かないといけないので、ならばライブラリ化すればいいということになった。
+		</p>
+		<h2>ソースコード</h2>
+		<script src="https://gist.github.com/tinumu/56c67d9c29e7b0adefdf2da537eece84.js"></script>
+		まあ、綺麗な実装じゃないのは許してね。あとバグってるかもしれない。
+		<h2>感想</h2>
+		<p>
+			やはり自分の解法で問題を通すのはとても楽しい。解法を自力で思いつくようにやると、こういうのを味わえると思う。
+		</p>
+		(2023/09/24 09:45)
+        <hr>
+		<a href="index.html"> 目次に戻る </a>
+	</body>
+</html>

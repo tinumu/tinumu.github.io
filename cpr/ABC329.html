@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>tinumuのホームページ</title>
+        <link rel=stylesheet type="text/css" href="../style.css">
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+		</script>
+		<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+		</script>
+		<meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />
+    </head>
+    <body>
+		<h1>ABC329 参加の感想</h1>
+		<a href="index.html"> 目次に戻る </a>
+		<h2>概要</h2>
+		<p>
+			<a href="https://atcoder.jp/contests/abc329">ABC329のリンクですよ！</a>
+		</p>
+        <p>
+			今回は ABCDEF の 6 完 (60:59, 0WA) 。
+			E が少しむずかしかったが、解けてよかった。
+		</p>
+		<h2>A - Spread</h2>
+		<p>
+			よくある空白区切り。
+		</p>
+		<h2>B - Next</h2>
+		<p>
+			マックス求めて、排除してっていうのを愚直に。
+			ソートでユニークすればよかったかなぁ。
+		</p>
+		<h2>C - Count xxx</h2>
+		<p>
+			それぞれの文字の最大の連続した長さを記憶しておいて最後に和を出力。
+			バグらせないように注意。
+		</p>
+		<h2>D - Election Quick Report</h2>
+		<p>
+			あんまりいい方法が思いつかなかったので set に値とインデックスをマイナスしたのを入れて最大のものを出力した。
+		</p>
+		<h2>E - Stamp</h2>
+		<p>
+			文字列 $S$ から消すことを考えて、その近傍にあるものを消せるかみたいな幅優先探索をすると通る。
+			消えた文字列は $T$ と比較するときは考えなくていいものとして考える。
+		</p>
+		<p>
+			結局塗りつぶされて消えてしまったものというのはどんな文字列であっても関係ないからである。
+		</p>
+		<h2>F - Colored Ball</h2>
+		<p>
+			愚直に計算すると間に合わないのでマージテクを使う。ただこの時、移す箱が逆になってしまうので、
+			指し示すポインターのようなものを入れ替えて、$a$ を指す時 $b$ を指すといったようなことができていればいい。
+		</p>
+		<p>
+			最初なぜか Unionfind とかを使って実装しようとしたが、途中で全く必要ないことに気づいて時間を失った。
+		</p>
+		<h2>G - Delivery on Tree</h2>
+		<p>
+			部分木に対する DP ができそうかもなぁと思いながら、ほとんど条件を詰めれず死んでいた。
+			なんか、lca がそれぞれ共有しないときはその lca からどっちに先に行かないといけないかは決まるなぁとか思っていた。
+		</p>
+		<h2> 感想 </h2>
+		<p>
+			なんか爆死したわけでもなく、良かったわけでもない普通の回だった。感情が特に何もない。
+			E が難しかったなぁと思った。でも考えてみればまあそうかとはなった。
+			あまりやらないことをやっていたと思うので、思いつきづらいのかもしれないが、ここで手が止まりたくないなぁと思ってしまう。
+			実装さえできればできる問題は通したい。
+		</p>
+		(2023/11/18 22:54)
+        <hr>
+		<a href="index.html"> 目次に戻る </a>
+	</body>
+</html>

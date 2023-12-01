@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>tinumuのホームページ</title>
+        <link rel=stylesheet type="text/css" href="../style.css">
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+		</script>
+		<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+		</script>
+		<meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />
+    </head>
+    <body>
+		<h1>HOJ 0455 ホゲナッチ数列 逆行列の累乗</h1>
+		<a href="index.html"> 目次に戻る </a>
+		<h2>概要</h2>
+		<p>
+			<a href="https://hoj.hamako-ths.ed.jp/onlinejudge/problems/455">問題これ</a>
+		</p>
+		<p>
+			解けた。この問題は すでに $A_n$ が決まっているので、$a$, $b$ を愚直に探すよりも、$A_n$ から逆に探していったほうが
+			効率が良いということがわかる。必要な情報は $A_{n-1}$ であり、これは $10007$ 通りある。
+			$a$ , $b$ を愚直に探す場合、$10007^2$ 通りあるので、明らかに後ろからのほうが良さそうである。
+		</p>
+		<p>
+			では次に後ろに演算する方法を考えたいが、これは実は後ろに演算する行列を持てればOK.<br>
+			$A_n = A_{n-1} + A_{n-2}$ であるので、 $A_{n-2} = A_{n} - A_{n-1}$ と置き換えられる。
+			これを行列にあらわすと、
+			$$ \begin{pmatrix}
+				0 & 1 \\
+				1 & -1
+				\end{pmatrix}
+			$$
+			と表現できる。
+			これはベクトルである、
+			$$ \begin{pmatrix}
+				A_n \\
+				A_{n-1}
+				\end{pmatrix}
+			$$
+			に対して処理する。演算すると、
+			$$ \begin{pmatrix}
+				A_{n-1} \\
+				A_{n} - A_{n-1} = A_{n-2}
+				\end{pmatrix}
+			$$
+			となるので、確かに処理できてそうである。	
+		</p>
+		<p>
+			あとは、この行列を $n-2$ 乗したものを繰り返し二乗法で用意しておいて、
+			$A_{n-1}$ を決めたベクトルに演算させて、演算後の結果が、$a$, $b$ ということになるので、
+			$a &lt A_n$ , $b &lt A_n$ であるかを確認してそれぞれ足しあげれば解ける。
+		</p>
+		<p>
+			何が面白かったかというと、行列累乗は逆にも適用できるのか、ということですね。
+			つまり行列累乗の行列が正則だったら、逆行列にできるので、あるベクトルに対して $-n$ 回適用するような
+			演算が可能ということ。そしてそれが $O(\log n)$ で求まるということ。
+		</p>
+		<p>
+			この問題はその良い類題になった！
+		</p>
+		<h2>ソースコード</h2>
+		<script src="https://gist.github.com/tinumu/a96832f04631fd6447865b06f0fc644d.js"></script>
+		<p>
+			そろそろ行列に可変のModintを載せられるようにしたいけど、 Modint の可変ライブラリを作るの面倒だ・・・ｗ
+		</p>
+		(2023/09/29 15:42)
+        <hr>
+		<a href="index.html"> 目次に戻る </a>
+	</body>
+</html>

@@ -1,0 +1,114 @@
+body {
+    text-align       : left;
+    background-color : #1f3134;
+    margin           : auto;
+    width            : 1280px;
+    margin           : 20px auto;
+    color            : white;
+    font-family      : "Helvetica Neue", "Arial", "Hiragino Kaku Gothic Pro", "Meiryo", "MSPGothic", "sans-serif";
+}
+
+h2 {
+    border-left   : 10px solid #68be8d;
+    border-bottom : 1px solid #68be8d;
+    padding-left  : 10px;
+}
+
+a {
+    color:lightskyblue;
+}
+
+h3 {
+    border-left   : 7px solid #68be8d;
+    border-bottom : 1px solid #68be8d;
+    padding-left  : 10px;
+}
+
+.block1 {
+    font-size : 12pt;
+    color     : white;
+    width     : 360px;
+    text-align: left;
+    padding   : 20px;
+}
+
+.block2 {
+    font-size : 12pt;
+    color     : white;
+    width     : 830px;
+    text-align: center;
+    padding   : 20px;
+    margin    : auto;
+}
+
+.block2 h1 {
+    border-left     : 0px;
+    border-bottom   : 5px solid #68be8d;
+    padding         : 15px;
+}
+
+.block3 {
+    font-size : 12pt;
+    color     : white;
+    width     : 360px;
+    height    : 360px;
+    text-align: left;
+    padding   : 20px;
+}
+
+.block6 {
+    font-size : 12pt;
+    color     : white;
+    width     : 360px;
+    height    : 360px;
+    text-align: left;
+    padding   : 20px;
+}
+
+.block4 {
+    background-color: #00a3af;
+    text-align      : center;
+    margin          :  20px;
+    width           :  350px;
+    font-size       :  30px;
+    color           : white;
+    border-radius   : 20px;
+    display         : block;
+}
+
+.block4:hover {
+    background-color: #b94047;
+}
+
+.block4 a {
+    display         : block;
+    text-decoration : none;
+    color           : white;
+    padding-bottom  :  25px;
+    padding-top     :  25px;
+}
+
+.block5 {
+    background-color: #00a3af;
+    text-align      : center;
+    margin          :  15px;
+    width           :  220px;
+    font-size       :  20px;
+    color           : white;
+    border-radius   : 15px;
+    display         : block;
+}
+
+.block5:hover {
+    background-color: #b94047;
+}
+
+.block5 a {
+    display         : block;
+    text-decoration : none;
+    color           : white;
+    padding-bottom  :  18px;
+    padding-top     :  18px;
+}
+
+

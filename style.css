@@ -1,0 +1,79 @@
+html {
+	background-color : #494a41
+}
+
+body {
+    text-align       : left;
+    background-color : #faf0e6;
+    margin           : auto;
+    width            : 960px;
+    margin           : 30px auto;
+    color            : black;
+    font-family      : "Helvetica Neue", "Arial", "Hiragino Kaku Gothic Pro", "Meiryo", "MSPGothic", "sans-serif";
+	padding          : 30px;
+	font-size        : 16px;
+}
+
+h2 {
+	border-left      : 10px solid #8b4513;
+	border-bottom    : 1px solid #8b4513;
+	padding-left     : 10px;
+}
+
+h3 {
+	border-left      : 7px solid #8b4513;
+	border-bottom    : 1px solid #8b4513;
+	padding-left     : 7px;
+}
+
+h4 {
+	border-left: 3px solid #8b4513;
+    padding:3px;
+    padding-left:10px;
+}
+
+h1 {
+	border-bottom    : 5px solid #8b4513;
+	padding-bottom   : 5px;
+	text-align       : center;
+}
+
+ul {
+	list-style  : none;
+}
+
+li 
+{
+	border-left: 3px solid #8b4513;
+    padding:3px;
+    padding-left:10px;
+}
+
+li a
+{
+    display:block;
+    text-decoration:none;
+    color:black;
+}
+
+li a:hover
+{
+	background-color : #ccccff;
+}
+
+hr {
+    height: 1px;
+    background-color: #8b4513;
+    border: none;
+}
+
+pre {
+	border: 1px solid #8b4513;
+	border-radius : 5px;
+	padding : 10px;
+}
+
+figure {
+    margin 0;
+}
+

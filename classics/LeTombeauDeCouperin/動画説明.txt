@@ -1,0 +1,35 @@
+モーリス・ラヴェル作、「クープランの墓」の楽譜をMIDIで打ち込みし、自動演奏させました。
+稚拙な点など多々あると思いますが、聴いていただけると嬉しいです。
+
+ただ、私は音楽学校にいったわけでもない、音楽の知識のない素人です。
+私はできる限り楽曲に対して忠実な解釈をしようと試みましたが、それでも楽曲に対するありえない解釈などをしているかもしれません。
+もしそうであれば、どのようなことでもいいのでご指摘などいただけるととてもありがたいです。
+解釈が全く異なり、曲を貶める危険性があるため、この動画を消してほしい、という意見でも構いません。そのような意見がありその説明が信用できる場合、この動画は削除します。
+
+打ち込みミスの多発が起こっていたため、もし打ち込みのミスをまた発見した際に修正して投稿し直せるように動画を曲ごとに分割しました。
+また、音源も変更し、リバーブを少し多く入れたため、前回上げたものより聴きやすくなっていると思います。
+
+音源: Mobile Studio Canvas SD-50 GM2 Piano 1
+製作ソフト: Domino
+再生ソフト: Synthesia
+
+参考になった文献
+・ラヴェル　ピアノ曲集 VII クープランの墓 音楽之友社
+・ラヴェル　回想のピアノ
+
+参考になったCD (出版社, 名前, タイトルの順)
+Nimbus Records, Vlado Perlemuter, Ravel Piano Works Oeuvres Pour Piano
+Erato,  Samson François, André Cluytens, Ravel - Complete Piano & Orchestral Works
+Chandos Classics, Louis Lortie, Ravel's Complete Works for Solo Piano
+Piano Classics, François Dumont, Ravel Complete Piano Music
+Mirare, Nathalia Milstein, Prokofiev / Ravel
+Erato, Jean-Philippe Collard, Ravel Complete works for solo piano
+
+私はラヴェルの楽曲を初めて聴いたとき、これらの録音を用いました。
+したがって、私の作ったMIDIファイルは、これらの録音に影響されていると言えるでしょう。
+Vlado Perlemuter 氏の録音は、音の確認をするときに特に参考になりました。
+
+この曲の作曲者はモーリス・ラヴェルであり、彼は1937年に亡くなっています。
+そのため、この曲は既にパブリックドメインになっています。
+
+また私の作ったこの動画で使われている音源は、私が作曲者の楽譜を使ってMIDIファイルに打ち込んだものを再生したものであるため、他の人が演奏したものではありません。
