@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>tinumuのホームページ</title>
+        <link rel=stylesheet type="text/css" href="../style.css">
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+		</script>
+		<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+		</script>
+		<meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />
+    </head>
+    <body>
+		<h1>ABC332 参加の感想</h1>
+		<a href="index.html"> 目次に戻る </a>
+		<h2>概要</h2>
+		<p>
+			<a href="https://atcoder.jp/contests/abc332">ABC332のリンクですよ！</a>
+		</p>
+        <p>
+			今回は ABCDEF の 6 完 (74:13+5:00, Fで1TLE)
+			F を犯罪で通した。だが通れば良いのだ。
+			かなり難しいセットだったみたいで 6 完できたのはよかった。
+		</p>
+		<h2>A - Online Shopping</h2>
+		<p>
+			愚直に実装しよう。バグらないように。
+		</p>
+		<h2>B - Glass and Mug</h2>
+		<p>
+			書かれたとおりに実装する。
+		</p>
+		<h2>C - T-shirts</h2>
+		<p>
+			オーバーキルじみているが、二分探索でそれぞれ調べた。
+		</p>
+		<h2>D - Swapping Puzzle</h2>
+		<p>
+			行を入れ替えた順列と列を入れ替えた順列を用意して全探索するとよい。
+		</p>
+		<h2>E - Lucky bag</h2>
+		<p>
+			重要な考察として、平均値はどのようになっても変化しないということである。
+			つまり、分散の途中経過を書くことができる。
+			するとこれは集合を扱う DP そのものであるのでそれを書く。 $O(3^N D)$ かな？
+		</p>
+		<h2>F - Random Update Query</h2>
+		<p>
+			その時の期待値を常に持っておけるようにできるのが理想なので、遅延セグ木で実装できないかと考える。
+			すると、クエリに対して確率 $p$ と値 $v$ をもつような作用素を考えるとうまく実装できる。
+			作用素同士の計算に割り算がでてくるのでかなり重く TLE してしまったが、
+			できるだけ定数倍がかからないようにして GCC optimize してみたら通った。
+			まさに犯罪。
+		</p>
+		<h2>G - Not Too Many Balls</h2>
+		<p>
+			普通に入れるときの反例さえ見つけられていない。F を解いて燃え尽きちゃった。
+		</p>
+		<h2>感想</h2>
+		<p>
+			なんか E が結構解かれていないみたいで、でもこれは DP できる形にまでなったらいつものなので、
+			かなり練習が役に立ったと思う。
+			F は $\log P$ を取り除く方法あるんですかね・・・
+			まだ完全に通しきれたと自信は持てないので普通の時間で通せるようにしていきたい。
+		</p>
+		(2023/12/10 22:55)
+        <hr>
+		<a href="index.html"> 目次に戻る </a>
+	</body>
+</html>
