@@ -3,6 +3,7 @@
     <head>
         <title>tinumuのホームページ</title>
         <link rel=stylesheet type="text/css" href="../style.css">
+        <link rel=stylesheet type="text/css" href="cprstyle.css">
 		<script type="text/x-mathjax-config">
 		MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
 		</script>
@@ -15,9 +16,12 @@
 		<h1>水DiffからSolver順に解く　ひとことコメント#4 #000301-#000400</h1>
 		<a href="index.html"> 目次に戻る </a>
 		<h2>概要</h2>
+		<div class="frame">
 		<p>
-			<a href="https://kenkoooo.com/atcoder/#/list/tinumukiti631?rated=Only+Rated&status=All&fromDiff=1200&toDiff=1000000000000000000&sortBy=solverCount&sortOrder=desc">AtCoder Problemsのリンク</a>
+			<a href="https://kenkoooo.com/atcoder/#/list/tinumukiti631?rated=Only+Rated&status=All&fromDiff=1200&toDiff=1000000000000000000&sortBy=solverCount&sortOrder=desc">AtCoder Problems のリンク(Solver順, 水色以上)</a>
 		</p>
+		</div>
+		<div class="frame">
         <p>
 			今回も 100 問解き、合計 400 問解けました。
 			今回の問題の傾向は 青 Diff の ABC 問題てんこ盛りという感じでしょうか。新しい ABC でもかなり増えてきた感じがある。
@@ -41,7 +45,17 @@
 		<p>
 			Solver が 2515 人から 2050 人までの問題でした。
 		</p>
-		<h2>#000301 Bracket Sequencing</h2>
+		<p>
+			今回からは問題の情報とかも載せます。問題名をクリックすると問題に飛べます。
+			体裁を整えたので少しは見やすくなったかな？
+		</p>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc167/tasks/abc167_f">#000301 - Bracket Sequencing</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC167 - F <small>(2020/05/10)</small><br>
+			Difficulty : <span class="diffblue">1961</span>
+		</div>
+		<div class="frame">
 		<p>
 			既に括弧列になっている部分文字列については特に考慮する必要もないのでこれらをすべて消してみる。
 			すると、"))...)((...(" というような文字列だけが残ることがわかる。
@@ -52,7 +66,13 @@
 			右から並べていくと良い。
 			これをつなげたときに括弧列が完成するならば "Yes" という感じだ。
 		</p>
-		<h2>#000302 Find Symmetries</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/agc023/tasks/agc023_b">#000302 - Find Symmetries</a></h2>
+		<div class="frame">
+			<span class="diffred">◉</span> AGC023 - B <small>(2018/04/28)</small><br>
+			Difficulty : <span class="diffcyan">1434</span>
+		</div>
+		<div class="frame">
 		<p>
 			$A, B$ を選んだときの答えと $(A+1) \bmod N, (B+1) \bmod N$ を選んだときの答えが実は同じになる。
 			比較する部分の要素に全く変化がないからである。
@@ -62,7 +82,13 @@
 		<p>
 			これを考えなくても一応差分を利用して問題を解くことができるが変に実装が長くなる。
 		</p>
-		<h2>#000303 Sky Reflector</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/arc113/tasks/arc113_d">#000303 - Sky Reflector</a></h2>
+		<div class="frame">
+			<span class="difforange">◉</span> ARC113 - D <small>(2021/02/21)</small><br>
+			Difficulty : <span class="diffcyan">1389</span>
+		</div>
+		<div class="frame">
 		<p>
 			まず $N=1$ のときは $K^M$ が答えであり、$M=1$ のときは $K^N$ が答えになる。
 			これを除いて $N, M \geq 2$ のときについて考える。
@@ -79,7 +105,13 @@
 			$B$ のパターンの数についてすぐにでてくると嬉しい。$b$ よりも大きい $B$ の最小値になるものを
 			引けばいいということがすぐにわからなくて手こずった。
 		</p>
-		<h2>#000304 Integer Product</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/agc047/tasks/agc047_a">#000304 - Integer Product</a></h2>
+		<div class="frame">
+			<span class="diffred">◉</span> AGC047 - A <small>(2020/08/09)</small></br>
+			Difficulty : <span class="diffcyan">1592</span>
+		</div>
+		<div class="frame">
 		<p>
 			まずすべての値を $10^9$ 倍しておく。この時、積が整数になるという条件は、$10^{18}$ で割り切れることと同値である。
 			これをもっと突き詰めて考えると、整数が $2$ で何回割り切れるか, $5$ で何回割り切れるかという情報だけ持っておけば
@@ -95,7 +127,13 @@
 		<p>
 			なお、これだと $i &lt j$ ではないが、同じものを取り除く処理をした後答えを $1/2$ したらその答えが出てくる。
 		</p>
-		<h2>#000305 Odd or Even</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc313/tasks/abc313_d">#000305 - Odd or Even</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC313 - D <small>(2023/08/05)</small></br>
+			Difficulty : <span class="diffblue">1630</span>
+		</div>
+		<div class="frame">
 		<p>
 			まず、$A_1, A_2, \cdots, A_K, A_{K+1}$ について、この中のある一つの要素を使わないようにするような
 			感じで、それぞれ聞いていく( $K+1$ 回)。
@@ -110,7 +148,13 @@
 			あとは、右にスライドしていくと、次々と $A$ の中身を知ることができ、
 			これら合わせて合計 $N$ 回ちょうどで行うことができる。
 		</p>
-		<h2>#000306 RGB Coloring</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/agc025/tasks/agc025_b">#000306 - RGB Coloring</a></h2>
+		<div class="frame">
+			<span class="diffred">◉</span> AGC025 - B <small>(2018/06/03)</small><br>
+			Difficulty : <span class="diffblue">1739</span>
+		</div>
+		<div class="frame">
 		<p>
 			赤色を塗った後青色を塗ると緑色になるといった解釈をして考えていくと良い。
 			すると、まず赤色を塗る個数を選び、それをもとに青色を何個塗らないといけないかがわかるので、
@@ -118,7 +162,13 @@
 			これをすべての $j$ について見ていけば良い。
 			もちろん $K-rA$ が $B$ で割り切れないとそもそも作れない。
 		</p>
-		<h2>#000307 Triple Shift</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/arc136/tasks/arc136_b">#000307 - Triple Shift</a></h2>
+		<div class="frame">
+			<span class="difforange">◉</span> ARC136 - B <small>(2022/02/27)</small></br>
+			Difficulty : <span class="diffcyan">1358</span>
+		</div>
+		<div class="frame">
 		<p>
 			まず入っている値が一致しないといけないのでそうでない場合を取り除いておく。
 		</p>
@@ -137,7 +187,13 @@
 			ソートを行うと完全にソートができる。
 			そのため、$A, B$ ともにソートして同じ値にすることができる。
 		</p>
-		<h2>#000308 Regular Triangle Inside a Rectangle</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc292/tasks/abc292_f">#000308 - Regular Triangle Inside a Rectangle</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC292 - F <small>(2023/03/04)</small></br>
+			Difficulty : <span class="diffcyan">1522</span>
+		</div>
+		<div class="frame">
 		<p>
 			すべての正三角形はできるだけ大きくした後、
 			正三角形のどこかの頂点を長方形のどこかの頂点へ平行移動させても
@@ -158,12 +214,24 @@
 			判定の仕方によっては誤差が大きくなってしまって WA が出る場合があるので注意。特に引き算は気をつける。
 			角度を見つける場面でさらに二分探索を使うと安全だと思う。
 		</p>
-		<h2>#000309 Restore the Tree</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/nikkei2019-qual/tasks/nikkei2019_qual_d">#000309 - Restore the Tree</a></h2>
+		<div class="frame">
+			<span class="difforange">◉</span> 全国プログラミング王決定戦予選 <small>(2019/01/27)</small><br>
+			Difficulty : <span class="diffcyan">1541</span>
+		</div>
+		<div class="frame">
 		<p>
 			入次数 $0$ の頂点を取り除いていくと、次に取り除く頂点が判明するときに現在の頂点が親になる。
 			このようにしながら DFS していくと解ける。
 		</p>
-		<h2>#000310 At Least One</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc260/tasks/abc260_e">#000310 - At Least One</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC260 - E <small>(2022/07/17)</small><br>
+			Difficulty : <span class="diffblue">1692</span>
+		</div>
+		<div class="frame">
 		<p>
 			$S$ の左端の小さい方から見るとする。この時、右端を右にスライドすると、
 			初めてすべての $i$ の値が入る位置がわかるはずである。そのためそれより右は作れることがわかる。
@@ -171,7 +239,13 @@
 			長さ $k$ 関連については、その位置が見つかれば最大の長さもわかるわけなので、それより小さいものもすべて含むように
 			imos 法を使って答えを出せば良い。
 		</p>
-		<h2>#000311 Sum of Three Terms</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/arc135/tasks/arc135_b">#000311 - Sum of Three Terms</a></h2>
+		<div class="frame">
+			<span class="difforange">◉</span> ARC135 - B <small>(2022/02/13)</small><br>
+			Difficulty : <span class="diffcyan">1239</span>
+		</div>
+		<div class="frame">
 		<p>
 			$S_i = A_i + A_{i+1} + A_{i+2}$ であるので、
 			$S_{i+1} - S_i = A_{i+3} - A_i$ であることがわかる。
@@ -182,7 +256,13 @@
 			なっていなければ "Yes" でその $A$ を出力。なっていたら "No" である。
 			Diff = 1239 ...? 
 		</p>
-		<h2>#000312 Sorting Color Balls</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc261/tasks/abc261_f">#000312 - Sorting Color Balls</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC261 - F <small>(2022/07/23)</small><br>
+			Difficulty : <span class="diffcyan">1587</span>
+		</div>
+		<div class="frame">
 		<p>
 			結局の所 $X$ を並び替えるときにはバブルソートのようになるので、並べ替え方は変わらないはずである。
 			それを考えると、色を度外視したときの転倒数から、それぞれの色についての転倒数を引いていけば答えが出そうである。
@@ -191,14 +271,26 @@
 		<p>
 			そのため、それぞれの色に対して転倒数を求めればいいが、座圧をして計算量を下げる必要があるのでそこに注意する。
 		</p>
-		<h2>#000313 Pay to Win</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/agc044/tasks/agc044_a">#000313 - Pay to Win</a></h2>
+		<div class="frame">
+			<span class="diffred">◉</span> AGC044 - A <small>(2020/05/23)</small><br>
+			Difficulty : <span class="diffblue">1828</span>
+		</div>
+		<div class="frame">
 		<p>
 			#000261「+1-1x2」 でやったように、逆操作を考えたい。
 			すると、同じように、近傍の $2$ の倍数の位置, $3$ の倍数の位置、$5$ の倍数の位置しか考えなくていいことがわかる。
 			すると、状態数はあまり多くなく、DP が可能になる。
 			ただ、値を減らすときに (操作回数) $\times D$ が 64bit 整数を余裕でオーバーフローするのでそこに気をつける。
 		</p>
-		<h2>#000314 Potion</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc192/tasks/abc192_f">#000314 - Potion</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC192 - F <small>(2021/02/20)</small><br>
+			Difficulty : <span class="diffblue">1783</span>
+		</div>
+		<div class="frame">
 		<p>
 			$k$ 種類の素材を合成することを考えると、組み合わせたポーションの魔力を $k$ で割ったあまりと、
 			$X$ を $k$ で割ったあまりが一致していれば魔力 $X$ のポーションを作れることがわかる。
@@ -210,7 +302,13 @@
 			計算量はこの DP を $N$ 回行うので、$O(N^4)$ である。
 			$k$ が小さいと DP の計算も少し小さくなるのでちゃんと間に合う。
 		</p>
-		<h2>#000315 Complete Binary Tree</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc321/tasks/abc321_e">#000315 - Complete Binary Tree</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC321 - E <small>(2023/09/23)</small><br>
+			Difficulty : <span class="diffblue">1627</span>
+		</div>
+		<div class="frame">
 		<p>
 			ABC321 の感想で書いてある。
 		</p>
@@ -223,7 +321,13 @@
 			$f$ の計算は $O(1)$ で求まるので、全体で $O(\log N)$ で解ける。
 			めんどくさい場合 $f$ に $O(\log N)$ かけて $O(\log^2 N)$ で解くこともある。
 		</p>
-		<h2>#000316 Enclose All</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc151/tasks/abc151_f">#000316 - Enclose All</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC151 - F <small>(2020/01/12)</small><br>
+			Difficulty : <span class="diffblue">1671</span>
+		</div>
+		<div class="frame">
 		<p>
 			円をとても大きい状態から小さくするときに当たる頂点について考えると、
 			$2$ 点のみであるか、 $3$ 点以上ということになる。しかし円は $3$ 点与えられると円の形が完全に
@@ -240,12 +344,19 @@
 			交点以外の場所で包含できる時、交点で包含できるところが必ず見つかる為これが成り立つ。
 			幾何ライブラリを整備しておくとよい。
 		</p>
-		<h2>#000317 Range Add Query</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc288/tasks/abc288_d">#000317 Range Add Query</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC288 - D <small>(2023/02/04)</small><br>
+			Difficulty : <span class="diffblue">1757</span>
+		</div>
+		<div class="frame">
 		<p>
 			自分は $X$ の数列に対して $B$ という数列を考えて、$B_i$ ... $X$ を左から $0$ にしていくときに
 			$i$ 番目に減算しなければならない値というものを考えた。
 			$X$ の長さを $n$ とすると、 $B_{n-K+1} = ... =  B_{n} = 0$ であれば良い数列ということになる。
-			実験していくと、$B_i = X_i - X_{i-1} + B_{i-K}(i \leq 2) , B_1 = A_1$ であることがわかるので、
+			実験していくと、$B_i = X_i - X_{i-1} + B_{i-K}(i \geq 2), B_1 = A_1$ (ただし $i \leq 0$ のとき $B_i = 0$ ) 
+			であることがわかるので、
 			$X$ の階差の累積和を持ってそれぞれ $B_{n-K+1} ... B_n$ について計算すれば
 			$O(K)$ で計算できることがわかる。
 		</p>
@@ -262,7 +373,13 @@
 			単純な累積和じゃないので境界について処理しなければならずインデックスの管理も難しいので
 			かなりやりづらい問題になっていると思う。考察の段階も考えると D 問題なんだろうか・・・
 		</p>
-		<h2>#000318 Cards</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc247/tasks/abc247_f">#000318 Cards</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC247 - F <small>(2022/04/10)</small><br>
+			Difficulty : <span class="diffblue">1697</span>
+		</div>
+		<div class="frame">
 		<p>
 			数を頂点として、カードを辺と考えると、このグラフは連結成分が何個かある閉路でできたグラフになる。
 			つまり円環上になっている。
@@ -271,7 +388,13 @@
 			ということになる。これはリュカ数という数で表すことができ、各連結成分ごとにリュカ数をかけ合わせれば
 			答えが出ることになる。リュカ数を知らなくても予め dp を考えておけば普通に解ける。
 		</p>
-		<h2>#000319 LRUD Game</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/agc033/tasks/agc033_b">#000319 LRUD Game</a></h2>
+		<div class="frame">
+			<span class="diffred">◉</span> AGC033 - B <small>(2019/05/04)</small><br>
+			Difficulty : <span class="diffcyan">1384</span>
+		</div>
+		<div class="frame">
 		<p>
 			嘘貪欲が通る問題。高橋くんができるだけある方向に落としたいときに青木くんが防げるかみたいな問題を
 			解くと、青木くんが逆の方向にずっと進めば良いみたいな感じだが、その逆に進むときに
@@ -280,12 +403,18 @@
 		<p>
 			この問題は、ゲームの問題でよくあるように、最後の状態から考えて、行ってしまうと確実に落とされるマス
 			というのを考える必要がある。この時、途中ですべてのマスがいけなくなったらどうやっても高橋くんが勝ち、
-			最終的にマスは残るが、そもそも駒がそのマスにない場合は高橋くんの勝ち、
+			最終的にマスは残るが、そもそも最初の駒の位置が落とされるマスにある場合は高橋くんの勝ち、
 			逆にそうでない場合は、常に行ってはいけないマスに行かないように青木くんが行動できるので、
 			青木くんが勝つことができる。
 			これをきちんと書くことでちゃんとした答えになる。
 		</p>
-		<h2>#000320 Integers on Grid</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc224/tasks/abc224_e">#000320 Integers on Grid</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC224 - E <small>(2021/10/23)</small><br>
+			Difficulty : <span class="diffblue">1657</span>
+		</div>
+		<div class="frame">
 		<p>
 			DP を解くような形になっているが、例によって辺の数が多いのでこれを下げる必要がある。
 			$\mathrm{dp}[i]$ ... $(r_i, c_i)$ にいるときに移動できる回数という DP を考えるが、
@@ -309,7 +438,13 @@
 			今回は DP をまとめることで遷移を減らすというよくあるテクニックだが少し高度だと思う。
 			まとめ方を工夫するという方法も覚えていきたい。
 		</p>
-		<h2>#000321 Voting Judges</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/agc041/tasks/agc041_b">#000321 Voting Judges</a></h2>
+		<div class="frame">
+			<span class="diffred">◉</span> AGC041 - B <small>(2019/12/28)</small><br>
+			Difficulty : <span class="diffcyan">1486</span>
+		</div>
+		<div class="frame">
 		<p>
 			#000174 Project Planning とやり方がかなりかぶる問題。と言うかこっちのほうが難しい？なんで水 Diff なのか。
 			まず、明らかなのは、$A_i$ が大きいほど採用されるということである。よって二分探索が使える。
@@ -333,13 +468,25 @@
 			ということから、この問題は $O(N \log N)$ で解ける。
 			変に説明が難しくなった。
 		</p>
-		<h2>#000322 Saving Snuuk</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/soundhound2018-summer-qual/tasks/soundhound2018_summer_qual_d">#000322 Saving Snuuk</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> SoundHound Inc. Programming Contest 2018 -Masters Tournament- - D <small>(2018/07/07)</small><br>
+			Difficulty : <span class="diffblue">1637</span>
+		</div>
+		<div class="frame">
 		<p>
 			ある両替所まで円で行き、ある両替所からはスヌークで行くので、$s$ から両替所までの円の最短経路を求めておき、
 			$t$ から両替所までのスヌークの最短経路を求めておけば各 $i$ にその両替所を使ったときの答えがでている。
 			あとは、 都市 $n$ から $1$ へ累積 max を求めておけば残りのスヌークの最大額が出る。
 		</p>
-		<h2>#000323 Digit Sum Replace</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/ddcc2020-qual/tasks/ddcc2020_qual_d">#000323 Digit Sum Replace</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> DDCC 2020 予選 - D <small>(2019/11/23)</small><br>
+			Difficulty : <span class="diffblue">1617</span>
+		</div>
+		<div class="frame">
 		<p>
 			この問題は実は連続する $2$ 桁をどのように選んでも最終的に開催する回数は変わらない。
 			桁和に着目すると、ある $2$ 桁を選んだときに繰り上がりが起こらない場合桁和は変わらず、
@@ -353,7 +500,13 @@
 			$\displaystyle \left( \sum_{i=1}^M c_i \right) - 1 + \left\lfloor \frac{\left(\sum_{i=1}^M c_i \times d_i \right)-1}{9} \right\rfloor$
 			となる。
 		</p>
-		<h2>#000324 Close Group</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc187/tasks/abc187_f">#000324 Close Group</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC187 - F <small>(2021/01/02)</small><br>
+			Difficulty : <span class="diffblue">1895</span>
+		</div>
+		<div class="frame">
 		<p>
 			この問題は、完全グラフになっている部分集合を選んでその数を最小化する問題である。
 			これは部分集合 DP で解ける。
@@ -380,7 +533,13 @@
 		<p>
 			部分集合で作られたグラフのことを誘導部分グラフっていうのか。覚えておこう。
 		</p>
-		<h2>#000325 ARC Wrecker 2</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/arc119/tasks/arc119_c">#000325 ARC Wrecker 2</a></h2>
+		<div class="frame">
+			<span class="difforange">◉</span> ARC119 - C <small>(2021/05/16)</small><br>
+			Difficulty : <span class="diffcyan">1354</span>
+		</div>
+		<div class="frame">
 		<p>
 			#000317 Range Add Query のように考えると、$K=2$ のときの条件と同じである。階差数列を考える。
 			$A_l \cdots A_r$ の数列を $X$ とすると、 $X_1 - X_2 + X_3 - \cdots = 0$ みたいな条件と、
@@ -395,7 +554,13 @@
 			その時は結局無理やり +-+- の交互を思いついて答えを出したがこれだと発想力勝負になってしまって
 			答えの正当性などが浮かんでこない。
 		</p>
-		<h2>#000326 Rush Hour 2</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc204/tasks/abc204_e">#000326 Rush Hour 2</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC204 - E <small>(2021/06/06)</small><br>
+			Difficulty : <span class="diffblue">1710</span>
+		</div>
+		<div class="frame">
 		<p>
 			ある都市にできるだけ速く着いてしまっても損することはないので基本的にダイクストラで解けばいいが、
 			辺のコスト計算が難しい。ただ次の頂点にたどり着くときの合計コストについてはいつ出発するかで
@@ -409,7 +574,13 @@
 			これは実際にコストを立式するとでてくるが、少し難しいので、だいたいそのあたりで一番小さい物を探せば良さそうである。
 			その時間を過ぎているようであれば、その時間から普通に遷移させれば良い。
 		</p>
-		<h2>#000327 Double Chance</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc276/tasks/abc276_f">#000327 Double Chance</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC276 - F <small>(2022/11/05)</small><br>
+			Difficulty : <span class="diffcyan">1562</span>
+		</div>
+		<div class="frame">
 		<p>
 			全パターンの $\max{(x, y)}$ の総和を調べてから、 $K^2$ で割るといった方針が考えやすい。
 			$K-1 \rightarrow K$ となるときに、$K-1$ で調べたパターンの総和に $A_{K}$ を追加したときの増分を考えていくと、
@@ -425,7 +596,13 @@
 			これは $A$ の値を座標とした Binary Indexed Tree を一つは個数を求める用、もう一つは総和を求める用で 2 つ持つと、
 			高速に求めることができる。今回は $1 \leq A_i \leq 2 \times 10^5$ であるので座圧がいらない。
 		</p>
-		<h2>#000328 Jealous Two</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc231/tasks/abc231_f">#000328 Jealous Two</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC231 - F <small>(2021/12/11)</small><br>
+			Difficulty : <span class="diffcyan">1580</span>
+		</div>
+		<div class="frame">
 		<p>
 			$A_i$ の小さい順にどっちもソートしてみると、高橋くんに $i$ のプレゼントを上げるときに
 			$A_i &lt A_j$ である最も小さい $j$ 以降のものは青木くんについて考慮しなくていいことがわかる。
@@ -434,7 +611,13 @@
 			すると、$B_i$ 以上の個数を数え上げることができる。
 			例によって $B$ が大きいので、座圧して入れておく必要がある。
 		</p>
-		<h2>#000329 XOR on Grid Path</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc271/tasks/abc271_f">#000329 XOR on Grid Path</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC271 - F <small>(2022/10/01)</small><br>
+			Difficulty : <span class="diffblue">1669</span>
+		</div>
+		<div class="frame">
 		<p>
 			$(1, 1)$ から $(N, N)$ までのマンハッタン距離は $2N - 2$ であるので、最大 $38$ 回移動することになる。
 			この半分である $19$ 回の移動したところでは最大でも $2^{19} = 524288$ パターンしか無い。
@@ -448,7 +631,13 @@
 			求めておくことで、XOR が一致するものがあるかどうかを調べることでこの問題を
 			$O(2^N)$ で解くことができる。
 		</p>
-		<h2>#000330 Pond Skater</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc170/tasks/abc170_f">#000330 Pond Skater</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC170 - F <small>(2020/06/14)</small><br>
+			Difficulty : <span class="diffblue">1968</span>
+		</div>
+		<div class="frame">
 		<p>
 			この問題は解法が 2 パターンあると考えていいはず。
 		</p>
@@ -470,7 +659,13 @@
 			\left\lceil \mathrm{min \_cost}[x_2][y_2][1] \right\rceil\right)}$ に出てくる。
 			実装するときは $K$ 倍しておくとやりやすい。
 		<p>
-		<h2>#000331 Absolute Minima</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc127/tasks/abc127_f">#000331 Absolute Minima</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC127 - F <small>(2019/05/25)</small><br>
+			Difficulty : <span class="diffyellow">2003</span>
+		</div>
+		<div class="frame">
 		<p>
 			傾きを持つデータを考えるときの初歩的な問題と言える。
 			まず、 $b$ はただの定数なので更新クエリのときに後で足しておけば良い。
@@ -498,7 +693,13 @@
 			傾きを持つテクニックはかなり典型で最近でも ABC330-F Minimize Bounding Square などで出ている。
 			こちらは区間が与えられるので傾きが変化するところが少し違うが。
 		</p>
-		<h2>#000332 Placing Rectangles</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc223/tasks/abc223_e">#000332 Placing Rectangles</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC223 - E <small>(2021/10/17)</small><br>
+			Difficulty : <span class="diffcyan">1510</span>
+		</div>
+		<div class="frame">
 		<p>
 			まず切り分け方を列挙してみる。まず先に縦に切るのか横に切るのかという $2$ パターン、
 			そして、まず最初に切り分けるものは何かという $3$ パターンで合わせて $6$ パターンである。
@@ -521,7 +722,13 @@
 		<p>
 			なんか説明が長くなったが関数をちゃんと作ればそこまで実装も難しくないと思う。
 		</p>
-		<h2>#000333 Contrast</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc178/tasks/abc178_f">#000333 Contrast</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC178 - F <small>(2020/09/13)</small><br>
+			Difficulty : <span class="diffblue">1877</span>
+		</div>
+		<div class="frame">
 		<p>
 			ちょっと難しい。
 			想定解を理解していない。
@@ -547,7 +754,13 @@
 			無理やり書いて、
 			かなり重実装になってしまったが、あらかじめ $B$ を逆順にするだけでかなり楽になるのだなと思った。
 		</p>
-		<h2>#000334 Meaningful Mean</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/arc075/tasks/arc075_c">#000334 Meaningful Mean</a></h2>
+		<div class="frame">
+			<span class="difforange">◉</span> ARC075 - E <small>(2017/06/03)</small><br>
+			Difficulty : <span class="diffblue">1979</span>
+		</div>
+		<div class="frame">
 		<p>
 			こういう問題を解くときには、こういう式変形をすると良い。
 			$\displaystyle \frac{\sum_{k=l}^r a_k}{r-l+1} \geq K$ ということなので、
@@ -565,7 +778,13 @@
 			$p_i$ ( $s$ を昇順に並び替えたときのインデックスの順列 ) を座標にして座圧しないようにすることもできる。
 			この場合 $s$ が同じ時は $p$ は昇順に並んでいる必要がある。
 		</p>
-		<h2>#000335 Median of Medians</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc107/tasks/arc101_b">#000335 Median of Medians</a></h2>
+		<div class="frame">
+			<span class="diffgreen">◉</span> ABC107 - D <small>(2018/08/25)</small><br>
+			Difficulty : <span class="diffyellow">2073</span>
+		</div>
+		<div class="frame">
 		<p>
 			中央値の問題の典型である。
 			今回は、各連続部分列の中央値が $M$ 以下であるようなものの個数が 
@@ -588,7 +807,13 @@
 			区間の個数を数え上げることができる。 $s$ を座標にする場合は負の値があり得るので、座圧をしない場合は
 			offset を取ること。
 		</p>
-		<h2>#000336 Divide Both</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc206/tasks/abc206_e">#000336 Divide Both</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC206 - E <small>(2021/06/19)</small><br>
+			Difficulty : <span class="diffblue">1745</span>
+		</div>
+		<div class="frame">
 		<p>
 			まず $g \neq 1$ である条件のみを考えて問題を解いてみることにする。
 			このとき、最大公約数が $g$ の倍数のときの問題を考える。
@@ -612,14 +837,26 @@
 			最大公約数が $1$ 以外の数え上げのときは、$g$ の倍数を考えて約数系包除をすることを少し
 			考えておくのもいいかもしれない。実装によっては大変になるのでできるだけ簡潔な方法を覚える。
 		</p>
-		<h2>#000337 フ</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc225/tasks/abc225_e">#000337 フ</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC225 - E <small>(2021/10/30)</small><br>
+			Difficulty : <span class="diffblue">1678</span>
+		</div>
+		<div class="frame">
 		<p>
 			これは角度の座標上で区間スケジューリング問題を解けばいいのでそれをうまく実装する。
 			ソートするときは $y/x$ が小さい順か大きい順かでソートすればうまく行く。ただ $0$ に対応するため
 			ソートの関数は工夫するように。
 			どちらにせよ、区間の右でソートできていれば良い。
 		</p>
-		<h2>#000338 Erase Subarrays</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc275/tasks/abc275_f">#000338 Erase Subarrays</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC275 - F <small>(2022/10/29)</small><br>
+			Difficulty : <span class="diffblue">1608</span>
+		</div>
+		<div class="frame">
 		<p>
 			こういう問題は、操作後の $A$ を構築すると良い。
 			左から作っていくことを考えると、使っている要素の区間から使わなくなる区間に入るときに操作回数が $1$ 増えるような
@@ -633,7 +870,13 @@
 			という DP を考えると、$k=1$ から $k=0$ に移り変わるときにコストを $1$ 追加するような遷移を考えれば
 			$O(NM)$ で解くことができる。
 		</p>
-		<h2>#000339 Dividing Subsequence</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/arc133/tasks/arc133_b">#000339 Dividing Subsequence</a></h2>
+		<div class="frame">
+			<span class="difforange">◉</span> ARC133 - B <small>(2022/01/22)</small><br>
+			Difficulty : <span class="diffcyan">1317</span>
+		</div>
+		<div class="frame">
 		<p>
 			$i$ の小さい順に $P_i$ を見ていくとする。この時条件を満たす $Q_j$ は $P_i$ の倍数であるが、
 			すべての $i$ について行っても調和級数の計算量程度にしかならず、 $O(N \log N)$ であることはわかる。
@@ -648,14 +891,26 @@
 			代わりに $j$ の大きい順に Range Max Query のセグ木で DP を計算しても良い。
 			どちらにせよ $O(N \log^2 N)$ だと思われる。
 		</p>
-		<h2>#000340 Good Set Query</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc328/tasks/abc328_f">#000340 Good Set Query</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC328 - F <small>(2023/11/11)</small><br>
+			Difficulty : <span class="diffcyan">1477</span>
+		</div>
+		<div class="frame">
 		<p>
 			ABC328 の感想で書いたが、これは重み付き Union-Find というデータ構造を使うとすぐに解くことができる。
 			各連結成分について代表元との値の差を持つデータ構造であり、矛盾等をすぐに発見できる。
 			これを使うと、ただ矛盾が発生しているかどうかだけで集合に $i$ を入れるかどうかを判定できるので
 			簡単に解くことができる。
 		</p>
-		<h2>#000341 Tr/ee</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/arc103/tasks/arc103_c">#000341 Tr/ee</a></h2>
+		<div class="frame">
+			<span class="difforange">◉</span> ARC103 - E <small>(2018/09/29)</small><br>
+			Difficulty : <span class="diffblue">1722</span>
+		</div>
+		<div class="frame">
 		<p>
 			まず自明な条件として、辺を切ったときにサイズ $n$ の連結成分は作られないことと、
 			必ずサイズ $1$ のものは作れるということは言える。
@@ -675,7 +930,13 @@
 		<p>
 			このようにサイズが $n$ になるまで構成すればよい。 サイズ $n$ の部分木があるがこれは切れないので大丈夫。
 		</p>
-		<h2>#000342 Box in Box</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc309/tasks/abc309_f">#000342 Box in Box</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC309 - F <small>(2023/07/08)</small><br>
+			Difficulty : <span class="diffblue">1619</span>
+		</div>
+		<div class="frame">
 		<p>
 			まず、$h_i, w_i, d_i$ を昇順に並べ替えるように回転してしまって良い。
 			仮に $a_i, b_i, c_i$ とする。
@@ -693,7 +954,13 @@
 		<p>
 			また今回は $a_i$ が重複することがあるので $a_i$ が同じものを同じタイミングで処理する必要がある。
 		</p>
-		<h2>#000343 Contiguous Repainting</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/agc008/tasks/agc008_b">#000343 Contiguous Repainting</a></h2>
+		<div class="frame">
+			<span class="diffred">◉</span> AGC008 - B <small>(2016/12/25)</small><br>
+			Difficulty : <span class="diffblue">1822</span>
+		</div>
+		<div class="frame">
 		<p>
 			最終的な状態を考えると、長さ $K$ 以上の同じ色の区間が出てくることがわかる。
 			逆に長さ $K$ の区間を一つさえ決めてしまえば他の色は自由にできることがわかる。
@@ -703,7 +970,13 @@
 			区間の中のものは後者を使うことで、区間の位置を決めたら $O(1)$ で求められるので、
 			$O(N)$ でこの問題が解ける。
 		</p>
-		<h2>#000344 Xor Minimization</h2>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/abc281/tasks/abc281_f">#000344 Xor Minimization</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC281 - F <small>(2022/12/10)</small><br>
+			Difficulty : <span class="diffblue">1714</span>
+		</div>
+		<div class="frame">
 		<p>
 			上の桁から $x$ を決めていくとする。
 			例えば $a$ の最大値の最上位ビットを $1$ か $0$ か決めるとすると、
@@ -718,7 +991,35 @@
 			あるビットを見ているときにすべての数字が $1$ になっているときや $0$ になっているときのみ、
 			$M$ は減少することになる。
 		</p>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/agc010/tasks/agc010_b">#000345 Boxes</a></h2>
+		<div class="frame">
+			<span class="diffred">◉</span> AGC010 - B <small>(2017/02/04)</small><br>
+			Difficulty : <span class="diffblue">1892</span>
+		</div>
+		<div class="frame">
+		<p>
+			まず $\sum_{i=1}^N A_i = S$ が $N(N+1)/2$ の倍数でなければおかしい。もし倍数でないのなら "NO" である。
+			そして、 $S/(N(N+1)/2) = K$ が操作回数になることがわかる。
+			また、$D_i = A_{(i+1) \bmod N}-A_{i}$ を考えようすると、$S$ が決まっている今、$D_i$ がわかっていれば
+			$A_i$ を復元でき、１対１の関係になるので、$D_i$ について考える問題に落とし込んでも良い。
+		</p>
+		<p>
+			$D_i$ についての $1$ 回の操作はどこかの値に対して $+(N-1)$ をし、その他の値に $-1$ をするような動作になる。
+			したがって、すべての値に $-1$ し、どこかの値に $+N$ をすると言い換えることができる。
+		</p>
+		<p>
+			このように言い換えれば、まずすべての値に $-K$ をし、そのあと $K$ 回 $+N$ をする操作で
+			$D_i$ をすべて $0$ にできるかを考えれば良いので、この問題は解けた。
+		</p>
+		</div>
 		<h2>まとめてみる</h2>
+		<div class="frame">
+			水色 : <br>
+			青色 : <br>
+			黄色 : <br>
+			橙色 : <br>
+		</div>
 		<h2>重要な問題を並べる</h2>
 		<h3>重要</h3>
 		<h3>準重要</h3>

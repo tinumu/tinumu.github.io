@@ -8,10 +8,11 @@ body {
     margin           : auto;
     width            : 960px;
     margin           : 30px auto;
-    color            : black;
-    font-family      : "Helvetica Neue", "Arial", "Hiragino Kaku Gothic Pro", "Meiryo", "MSPGothic", "sans-serif";
+    color            : #33302b;
+    font-family      : "Helvetica Neue", "arial", "sans-serif", "Hiragino Kaku Gothic Pro", "Meiryo", "MSPGothic";
 	padding          : 30px;
 	font-size        : 16px;
+	line-height      : 1.42857143;
 }
 
 h2 {
@@ -19,6 +20,17 @@ h2 {
 	border-bottom    : 1px solid #8b4513;
 	padding-left     : 10px;
 }
+
+h2 a {
+	text-decoration  : none;
+	color            : #33302b;
+}
+
+h2 a:hover {
+	text-decoration  : underline;
+	color            : #23527c;
+}
+
 
 h3 {
 	border-left      : 7px solid #8b4513;
@@ -75,5 +87,14 @@ pre {
 
 figure {
     margin 0;
+}
+
+
+.frame {
+	border-left: 3px solid #d8cdc4;
+	padding: 1px;
+	padding-left: 12px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
