@@ -1,5 +1,5 @@
 html {
-	background-color : #494a41
+	background-color : #494a41;
 }
 
 body {
@@ -89,6 +89,12 @@ figure {
     margin 0;
 }
 
+code {
+	background-color : #efe4ea;
+	color : #c00000;
+	font-family : "Monospace", "couriers";
+	font-size : 14px;
+}
 
 .frame {
 	border-left: 3px solid #d8cdc4;
