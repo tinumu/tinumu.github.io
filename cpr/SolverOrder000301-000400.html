@@ -1405,6 +1405,108 @@
 			かなり面倒くさいが、そこの実装さえできれば解ける。
 		</p>
 		</div>
+		<h2><a href="https://atcoder.jp/contests/abc231/tasks/abc231_e">#000358 - Minimal payments</a></h2>
+		<div class="frame">
+			<span class="diffblue">◉</span> ABC231 - F <small>(2021/12/11)</small><br>
+			Difficulty : <span class="diffblue">1740</span>
+		</div>
+		<div class="frame">
+		<p>
+			#000140 Payment の可変進数? バージョンのようなものである。
+			ある硬貨を $1$ つ多く支払う時、その後をすべて $0$ にしてしまっても良いといった考えが使える。
+			使う選択肢としてありえる硬貨は $X$ を表すその桁の硬貨の数あるいはそれより $1$ 大きい値、 $0$ しかない。
+			これを DP にして表すことができる。下の桁から行うとする。
+			<div class="empframe">
+				$\mathrm{dp}[i][k]$ ... いま $i$ 桁目までを見ている。$k=0$ のときそれまでの桁が払いきれている状態、
+				$k=1$ のとき払いきれていない状態のときの必要な硬貨の枚数の和の最小値
+			</div>
+			これの遷移を適切に実装すると問題に解くことができる。 $O(N)$ である。
+			与えられ方が違ったら $N$ を大きくできる。
+		</p>
+		<p>
+			詳しいことを書かなかったので、<a href="https://atcoder.jp/contests/abc231/submissions/47831721">私のコード</a>
+			も参照してほしい。
+		</p>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/agc002/tasks/agc002_d">#000359 - Stamp Rally</a></h2>
+		<div class="frame">
+			<span class="diffred">◉</span> AGC002 - D <small>(2016/07/31)</small><br>
+			Difficulty : <span class="difforange">2514</span>
+		</div>
+		<div class="frame">
+		<p>
+			<a href="AGC002-StampRally.html">このページ</a> でしっかりと書いてある。
+		</p>
+		<p>
+			この問題はある辺 $i$ までを使用したときの $x_j$ の連結成分の大きさと、 $y_j$ の連結成分の大きさ
+			の和 ($x_j, y_j$ が連結ならば和ではなく $x_j$ の連結成分の大きさ)
+			が $z_j$ 個に達しているかという問題を問われている。
+		</p>
+		<p>
+			クエリごとに二分探索をして連結していきながら見つけると、時間がかかりすぎてしまうので
+			想定解では並列二分探索を使っている。
+			辺を連結して最後まで連結するまでの間に、すべてのクエリについて $1$ 回以上二分探索が行える。
+			そうすると、辺の連結を一通りやるのを $\log M$ 回繰り返すだけで済むので、
+			この問題を解けるというわけである。
+		</p>
+		<p>
+			他にも、部分永続 Union-Find というデータ構造が使える。ある辺 $i$ を連結することを時間 $i$ に
+			連結すると表現することによって、
+			ある時間 $t$ における連結の状態や、連結成分のサイズを高速に求められるこのデータ構造が使える。
+		</p>
+		<p>
+			他にも色々と解法があるが、詳しくは上のページで。
+		</p>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/arc135/tasks/arc135_c">#000360 - XOR to All</a></h2>
+		<div class="frame">
+			<span class="difforange">◉</span> ARC135 - C <small>(2022/02/13)</small><br>
+			Difficulty : <span class="diffcyan">1512</span>
+		</div>
+		<div class="frame">
+		<p>
+			この問題で気づくべきなのは、 $1$ 回目の操作で $i$ を選び、$2$ 回目の操作で $j$ を選ぶ場合、
+			まず全体に $A_i$ がかかる。次に、 $A_i \oplus A_j$ がかかることになる。
+			これは最終的に何がかかっているかと言うと、 $A_i \oplus A_i \oplus A_j = A_j$ であることがわかる。
+			つまり、最初に $j$ を選んで終わりという操作と何も変わらない。
+		</p>
+		<p>
+			つまり、$A$ そのものと、$A_i$ を $\mathrm{xor}$ したものについてすべて調べればよく、
+			これは $A$ についてそれぞれの桁の $1$ の総数を保存しておけば反転したときも $1$ が何個あるかが
+			わかるので $i$ あたり $O(\log A_\mathrm{max})$ で計算できる。
+			よって全体で、 $O(N \log A_\mathrm{max})$ で計算できた。
+		</p>
+		</div>
+		<h2><a href="https://atcoder.jp/contests/agc020/tasks/agc020_c">#000361 - Median Sum</a></h2>
+		<div class="frame">
+			<span class="diffred">◉</span> AGC020 - C <small>(2018/01/14)</small><br>
+			Difficulty : <span class="diffyellow">2259</span>
+		</div>
+		<div class="frame">
+		<p>
+			単純に部分和問題を解こうとすると、$O(N (A_\mathrm{max})^2)$ だけかかるので良くない。
+			しかしこの問題はある事実に気づくと定数倍が高速化できる。
+		</p>
+		<p>
+			まず、総和が $0$ の状態から何らかの $A_i$ を入れていくことを考える。
+			また、総和が $\mathrm{sum} = \sum_{i=1}^N A_i$ の状態から $A_i$ を外していくことを考える。
+			これらについて考えると、ちょうど鏡のような関係、同じような集合ができることがわかる。
+		</p>
+		<p>
+			ここで言える事実として、部分和 DP ( $\mathrm{dp}[s]$ ... 総和が $s$ になるような集合の個数 )  について
+			考えると、 
+			$$\mathrm{dp}[s] = \mathrm{dp}[\mathrm{sum}-s]$$ 
+			であると言える。
+			つまり、中央値は、この DP 配列の値の存在するところを $1$ と考え、他を $0$ と考えたとき、
+			$1$ の総数を $O$ などとおいたとき、小さい値から $\lceil O/2 \rceil$ 番目に $1$ が出てくるところの
+			値であることがわかる。
+		</p>
+		<p>
+			そのためこの DP は値があるかないかをみる <code>bool</code> 型で扱えるので、 <code>bitset</code> で高速化できる。
+			すると、この問題は $O(N (A_\mathrm{max})^2 / w)$ で解くことができ、
+			これは、 $2000^3 / 64 = 125000000$ であるので、TLE しないで解くことができる。
+		</p>
+		</div>
 		<h2>まとめてみる</h2>
 		<div class="frame">
 			水色 : <br>
@@ -1416,7 +1518,7 @@
 		<h3>重要</h3>
 		<h3>準重要</h3>
 		<h2>感想</h2>
-		(2024/01/17 3:57)
+		(2024/01/18 3:45)
         <hr>
 		<a href="index.html"> 目次に戻る </a>
 	</body>
