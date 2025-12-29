@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>tinumuのホームページ</title>
+        <link rel=stylesheet type="text/css" href="../style.css">
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+		</script>
+		<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+		</script>
+		<meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />
+    </head>
+    <body>
+		<h1>ABC325 参加の感想</h1>
+		<a href="index.html"> 目次に戻る </a>
+		<h2>概要</h2>
+		<p>
+			<a href="https://atcoder.jp/contests/abc325">ABC325のリンクですよ！</a>
+		</p>
+		<p>
+			今回は、ABCDEFの6完。 60:11。
+		</p>
+		<h2>A - Takahashi san</h2>
+		<p>
+			S + " san" を出力。
+		</p>
+		<h2>B - World Meeting</h2>
+		<p>
+			ただ、$X$ でソートして区間の左の+8まで許すだけ。$X$ に $24$ 足したものをもう一つ作っておくと便利。
+		</p>
+		<h2>C - Sensors</h2>
+		<p>
+			ただつながってる#を消すだけ。半分鬼気迫る状況だったのでガリガリ書いて早めにACした。
+		</p>
+		<h2>D - Printing Machine</h2>
+		<p>
+			座圧して左から見て、区間の終了するのが早い順に処理する。
+		</p>
+		<h2>E - Our clients, please wait a moment</h2>
+		<p>
+			社用車に対する都市 $1$ からのダイクストラ。
+			電車に対する都市 $N$ からのダイクストラ。
+			これを各都市でmincostを足せば終わり。
+			得意な問題しか無いのに、Bが遅すぎたことををとにかく悔やんだ。
+		</p>
+		<h2>F - Sensor Optimization Dilemma</h2>
+		<p>
+			現在使ったセンサーの数を保存してDPするだけ。遷移が計算量ヤバそうな感じがするが、
+			使うと減るので大丈夫だろうと思ってやった。そうしたら通った。
+		</p>
+		<h2>G - offence</h2>
+		<p>
+			ACしていないのでわからないが、後ろから f のところを見て、ペアで処理できる最小の o の位置を見つけれれば
+			良いのかなとは方針が立っている。後で冷静になって考えようと思うが、今は冷静さを欠いている。
+			何回か提出したがWAがでてそのままコンテストが終了した。
+		</p>
+		<h2> 感想 </h2>
+		<p>
+			Perf=2243, 
+			気持ちとしては、前回のARCのほうが出来が良かったと個人的な評価が立つ。
+			このセットはちゃんとパフォを取ってないと駄目なやつだ。
+		</p>
+		(2023/10/21 23:18)
+		<h2>後から読んでみたよ</h2>
+		<p>
+			まあ、パフォは悪くないし、WAはでてないし。WAでてたら強制的に+5分だからね。	
+			あと、F 危ないと思ってたんだけど、なんか、多分dp配列に値が入ってるのが min(k1, k2) 個くらいしか無いんじゃないか
+			となんとなくわかった。だからTLEしなかったのかも。自分の解法だとややそれから増えるのでちょっと危うかったのは事実。
+			想定解を見てみたら、そもそもコストは何回使ったかでわかるんだから、k1をつかったときの k2 の最小を求めるだけで良かったみたい。
+			あー、見ますこういうDP。昔話をしたくなる。
+		</p>
+		<p>
+			G も盗み聞きによるとDPみたい。あー、DPでも行けそうだ。多分自分の貪欲は嘘っぽいな。どっかで死ぬケースがあるんだろう。
+			ちょっと後で解いてみたい。
+		</p>
+		(2023/10/22 06:37)
+        <hr>
+		<a href="index.html"> 目次に戻る </a>
+	</body>
+</html>

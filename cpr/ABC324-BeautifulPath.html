@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>tinumuのホームページ</title>
+        <link rel=stylesheet type="text/css" href="../style.css">
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+		</script>
+		<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+		</script>
+		<meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />
+    </head>
+    <body>
+		<h1>ABC324 F - Beautiful Path</h1>
+		<a href="index.html"> 目次に戻る </a>
+		<h2>概要</h2>
+		<p>
+			<a href="https://atcoder.jp/contests/abc324/tasks/abc324_f">問題のリンク</a>
+		</p>
+		<p>
+			ABC324の感想で述べたような解法(決して最小費用流とか)ではなく、平均を最大化する問題は二分探索で解けるというものだった。
+		</p>
+		<p>
+			あるパスの頂点を $p_1, ..., p_k$ とすると、今回の問題は、
+			$$ \frac{\sum_i^k b_{p_i}}{\sum_i^k c_{p_i}} $$ を最大化する問題になっている。
+		</p>
+		<p>
+			これをそのまま最大化しようとすると、パスを求めてからじゃないとコストがわからないような仕組みになっているので、
+			部分的な問題にできず、かなりよくない。部分的な問題にするにしてもコストを保存しないといけなくてとんでもない。
+		</p>
+		<p>
+			そこで、この問題をこの答えを $X$ 以上にできるかという判定問題にすると、
+			$$ \frac{\sum_i^k b_{p_i}}{\sum_i^k c_{p_i}} \geq X $$ となり式変形できる。
+			すると、
+			$$ \sum_i^k (b_{p_i} - X \times c_{p_i}) \geq 0 $$ という問題に変化する。
+			このようにすることで、このパスを求める際に部分問題が答えに使えるようになり、普通のdpで解けるようになるというものだ。
+		</p>
+		<h2>ソースコード</h2>
+		<script src="https://gist.github.com/tinumu/2f3d7f19b423731df1f3be4b070f6730.js"></script>
+		<p>
+			$X$ を t と命名したのは、特に意味はない。解いた時この変数名だっただけ。
+		</p>
+		<h2>感想</h2>
+		<p>
+			少し解法らしいものを覗き見してしまった。それが判定問題について考えていたので、もしやと思ったら、解法が思い当たったので書いてみた。
+			そうしたらACした。うーん、蟻本にも乗ってるくらいの典型らしいけど、考えれば解ける問題だったなとも思う。
+			ちょっともったいないことしたかも・・・？
+		</p>
+		<p>
+			<a href="https://atcoder.jp/contests/abc044/tasks/arc060_a">高橋くんとカード</a> という問題でも、
+			計算量を減らすためにこういうテクニックが使われている(使わなくても解けるけど)。
+			平均を $A$ にしたいのであれば、 カードに対して最初から $A$ を引いてしまえば、個数によらず $0$ になるかどうかで判定できる
+			という問題になっている。
+		</p>
+		<p>
+			二分探索の良いところは、問題が判定問題に落ちることによって、直接解を求める必要がなくなるというところだと思う。
+			実際に解になる値に対して、式変形が使えたり、決めうった $X$ を境界にしてデータが単純になったりする。
+			値の決め打ちは、式に介入できるということをしっかり覚えておこう。
+		</p>
+		<p>
+			最大化(最小化)するみたいな問題がでたときは、一回式を書いてみて、決めうったときに楽になるかを確かめるのが良いなと思った。
+			でも、本当に魔法みたいだ。具体的な値を出すだけで解け方が変わってくるのはかなり不思議な話だ。 
+			<a href="https://atcoder.jp/contests/abc227/tasks/abc227_d">Project Planning</a> とかもかなりそうだけど。
+			まあこっちは判定問題の求め方がかなり特殊なタイプだけど。
+		</p>
+		<p>
+			ちなみに類題で <a href="https://atcoder.jp/contests/abc034/tasks/abc034_d">食塩水</a> という問題があるようだ。
+			これも同じように二分探索すると解くことができる。
+		</p>
+		(2023/10/19 00:27)
+        <hr>
+		<a href="index.html"> 目次に戻る </a>
+	</body>
+</html>

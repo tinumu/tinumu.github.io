@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>tinumuのホームページ</title>
+        <link rel=stylesheet type="text/css" href="../style.css">
+		<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+		</script>
+		<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+		</script>
+		<meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />
+    </head>
+    <body>
+		<h1>ARC169 参加の感想</h1>
+		<a href="index.html"> 目次に戻る </a>
+		<h2>概要</h2>
+		<p>
+			<a href="https://atcoder.jp/contests/arc169">ARC169のリンクですよ！</a>
+		</p>
+		<p>
+			AB の 2 完(55:29)。ARCにしては。
+		</p>
+		<p>
+			今まで爆死し続けてたことを考えると割と良い結果なのかもしれない。
+			C の考察をしていたが全然届いてなかったので難しい問題はまだ全然解けない。
+		</p>
+		<h2>A - Please Sign</h2>
+		<p>
+			頂点 $1$ を根として根付き木を考えてみると、最終的な値がどうなるかを立式したときに木の深さが次数になるような
+			式ができる。そのため、次数が大きいほうから + になっているか、 - になっているかを確かめ、
+			+ ならすぐに + と出力。 - ならすぐに - と出力。 $0$ なら次に大きい次数を見ていくとする。
+			すべて $0$ になっているなら $0$ と出力。
+		</p>
+		<h2>B - Subsegments with Small Sums</h2>
+		<p>
+			$g(i)$ ... $i$ を左端としたときのすべての $f$ の和とする。
+			この時、$i$ から一つ区間を作ることを考え、できるだけ右に伸ばす。このときの次の区間の始まりの位置を $j$ とすると、
+			$g(i) = g(j) + (N-i+1)$ が成り立っている。このため、適切に DP を実装すると解ける。
+			$i &gt N$ のときは $g(i) = 0$ で。
+		</p>
+		<p>
+			なぜ B まで 1000 人くらい解けてるんだ。。。
+		</p>
+		<h2>C - Not So Consective</h2>
+		<p>
+			最初包除原理を考えたが、 $A$ の性質上なんか厳しそう。そのため DP で同じ値が何個続いているかみたいなキーを作って
+			やってみたのだが、いまいちちゃんとした定義のもとに作っていないので、細かいところを詰めれていない。
+			DP っぽさはあると思うんだけどなぁ。
+		</p>
+		<h2>感想</h2>
+		<p>
+			B まではまあまあの出来だと思う。というかちゃんと思いつけたのは良かった。
+			ARC は難しくなると方針が全く思いつかない問題になってくるので、これ解けるのかなぁと思いながら
+			かなりの時間を溶かすことになる。
+		</p>
+		<p>
+			まだまだ ARC は水色すら埋まっていないので今後埋めていきたいと思っている。
+		</p>
+		(2023/12/09 23:22)
+        <hr>
+		<a href="index.html"> 目次に戻る </a>
+	</body>
+</html>
